@@ -105,6 +105,7 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
 
               children: <Widget>[
+                
                 ListHome(texto: "Informações Legais", ico: Icons.announcement, onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context) => InfoLegais()))),
                 _buildDivider(),
                 ListHome(texto: "Informações de Funcionamento", ico: Icons.info, onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context) => Funcionamento()))),
