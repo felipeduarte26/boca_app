@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/login/login.dart';
+import 'pages/home/home.dart';
 void main() => runApp(MyApp());
 
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.green.shade800,
         //primarySwatch:  Colors.red,
       ),
-      home: login(),
+      home: HomePage(),
     );
   }
 }

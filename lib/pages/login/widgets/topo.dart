@@ -13,7 +13,7 @@ class TopoLogin extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: Padding(
-              padding: EdgeInsets.only(top: 80),
+              padding: EdgeInsets.only(top: 60),
               child: Image.asset(
                 "images/logo.png",
                 width: 350,

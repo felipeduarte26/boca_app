@@ -1,4 +1,4 @@
-#Sun Feb 02 03:24:58 AMST 2020
+#Sun Feb 02 19:28:12 AMST 2020
 base.0=/home/felipe/projetos/Flutter/boca_app/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

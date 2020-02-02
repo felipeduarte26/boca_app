@@ -36,16 +36,6 @@ class _HomePageState extends State<HomePage> {
           onChange: (index) {
               setState(() {
                 _currentPage = index;
-                if(index == 1){
-                  showDialog(context: context,
-                      builder: (BuildContext context){
-                    return QuestionDialog(msg: "Deseja Realmente sair do Boca-App",
-                        titulo: 'Aviso',
-                        YesOptions: ()=>  Navigator.push(context, MaterialPageRoute(builder: (context) => login())),
-                        NoOptions: ()=> Navigator.pop(context));
-                  });
-
-                }
               });
 
 
@@ -80,14 +70,17 @@ class _HomePageState extends State<HomePage> {
           ),
         );
       case 1://Login
-        return Container(
+        return login();
+        /*return Container(
           padding: EdgeInsets.zero,
           decoration: BoxDecoration(
             image: _GetBackGround(),
           ),
 
-        );
-      case 2://Informacoes
+        );*/
+
+
+        case 2://Informacoes
         return Container(
           alignment: Alignment.center,
           padding: EdgeInsets.only(top: 200.0, bottom: 250.0),

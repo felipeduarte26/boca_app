@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
@@ -6,6 +7,7 @@ class email extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   TextEditingController _controllerEmail;
   TextEditingController _controllerNome;
+  TextEditingController _controllerTexto;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class email extends StatelessWidget {
                     TextFormField(
                       controller: _controllerNome,
                       keyboardType: TextInputType.text,
-                      textInputAction: TextInputAction.next,
+                      textInputAction: TextInputAction.done,
                       decoration: InputDecoration(
                           labelText: "Nome",
                           hintText: "Informe o seu nome",
@@ -50,7 +52,7 @@ class email extends StatelessWidget {
                     TextFormField(
                       controller: _controllerEmail,
                       keyboardType: TextInputType.emailAddress,
-                      textInputAction: TextInputAction.next,
+                      textInputAction: TextInputAction.done,
                       decoration: InputDecoration(
                           labelText: "e-mail",
                           hintText: "Dígite o seu e-mail",
@@ -62,7 +64,40 @@ class email extends StatelessWidget {
 
                     ),
                     const SizedBox(height: 30.0),
+                    Container(
+                      color: Colors.white,
+                      child:TextField(
+                        controller: _controllerTexto,
+                        textInputAction: TextInputAction.done,
+                        textAlign: TextAlign.start,
+                        minLines: 5,
+                        maxLength: 300,
+                        decoration: new InputDecoration(
+                          contentPadding: EdgeInsets.all(30.0),
+                          border: new OutlineInputBorder(
+                              borderSide: new BorderSide(color: Colors.teal)
+                          ),
+                        ),
+                        autocorrect: true,
+                        style: TextStyle(height: 2.0),
+                        keyboardType: TextInputType.multiline,
+                        maxLines: null,
+                      ),
+                    ),
+                    const SizedBox(height: 30.0),
+                    SizedBox(
+                      width: double.infinity,
+                      child: RaisedButton(
+                        color: Colors.green,
+                        onPressed: (){
 
+                        },
+                        child: Text(
+                          'Enviar',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

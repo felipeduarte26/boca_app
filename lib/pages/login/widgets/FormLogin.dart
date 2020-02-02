@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:boca_app/pages/login/widgets/InputField.dart';
 import 'package:boca_app/pages/login/widgets/stragger_animation.dart';
 import 'package:boca_app/pages/home/home.dart';
+import 'package:boca_app/pages/usuario/cadastroUsuario.dart';
 
 class FormLogin extends StatefulWidget {
   @override
@@ -47,7 +48,7 @@ class _FormLoginState extends State<FormLogin>
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20),
             width: 350,
-            padding: EdgeInsets.only(top: 50),
+            padding: EdgeInsets.only(top: 5.0),
             child: Form(
               key: _formKey,
               child: Column(
@@ -86,31 +87,11 @@ class _FormLoginState extends State<FormLogin>
                       }
                     },
                   ),
-                  const SizedBox(height: 20.0,),
+                  const SizedBox(height: 50.0,),
                   InkWell(
-                    onTap: (){
-
-                    },
-                    child: Container(
-                      height: 50.0,
-                      width: MediaQuery.of(context).size.width / 1.2,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                              Colors.blue,
-                              Colors.black
-                            ],
-                        ) ,
-                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                      ),
-                      child: Center(
-                          child: Text('Visitante (Entrar sem Cadastro)', style: TextStyle(color:  Colors.white, fontWeight: FontWeight.bold) ,),
-                      ),
-                    ),
+                    onTap: ()=>  Navigator.push(context, MaterialPageRoute(builder: (context) => CadUsuario())),
+                    child: const Text('Criar uma nova Conta?', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
                   ),
-
-
-
                 ],
               ),
             ),
