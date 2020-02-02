@@ -42,7 +42,7 @@ class InfoLegais extends StatelessWidget {
             ],
           ),
         ),
-      )
+      ),
     );
 
   }

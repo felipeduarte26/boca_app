@@ -105,9 +105,9 @@ class CadUsuario extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: RaisedButton(
-                      color: Colors.blue,
+                      color: Colors.green,
                       onPressed: (){
-                         Beatiful(context, 'Cadastro salvo com sucesso', 'Aviso');
+                         
                       },
                       child: Text(
                         'Salvar',

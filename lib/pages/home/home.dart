@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:boca_app/pages/home/widegts/AnimatedBottomNav.dart';
@@ -8,6 +6,7 @@ import 'package:boca_app/pages/login/login.dart';
 import 'package:boca_app/pages/home/widegts/ListHome.dart';
 import 'package:boca_app/pages/Info/informacoesLegais.dart';
 import 'package:boca_app/pages/funcionamento/funcionamento.dart';
+import 'package:boca_app/pages/Email/email.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -105,12 +104,12 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
 
               children: <Widget>[
-                
+
                 ListHome(texto: "Informações Legais", ico: Icons.announcement, onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context) => InfoLegais()))),
                 _buildDivider(),
                 ListHome(texto: "Informações de Funcionamento", ico: Icons.info, onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context) => Funcionamento()))),
                 _buildDivider(),
-                ListHome(texto: "Fale Conosco", ico: Icons.phone, onTap: (){} ),
+                ListHome(texto: "Fale Conosco", ico: Icons.phone, onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context) => email()))),
               ],
             ),
           ),
