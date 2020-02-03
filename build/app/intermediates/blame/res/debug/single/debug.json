@@ -4,12 +4,12 @@
         "source": "/home/felipe/projetos/Flutter/boca_app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/felipe/projetos/Flutter/boca_app/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "/home/felipe/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-mdpi-v4/notification_bg_normal.9.png"
-    },
-    {
         "merged": "/home/felipe/projetos/Flutter/boca_app/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "/home/felipe/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/home/felipe/projetos/Flutter/boca_app/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/home/felipe/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-mdpi-v4/notification_bg_normal.9.png"
     },
     {
         "merged": "/home/felipe/projetos/Flutter/boca_app/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
