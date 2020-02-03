@@ -47,9 +47,9 @@ class _BuscaItens extends State<BuscaItens> {
                 child: ListView.builder(
                     itemCount: ItensList.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return ListarItens(
-                          context: context, index: index, Item: ItensList);
-                    }),
+                      return ListarItens(context: context, index: index, Item: ItensList);
+                      }
+                    ),
               ),
               Container(
                 height: 50,

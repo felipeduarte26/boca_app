@@ -1,8 +1,13 @@
+import 'dart:math';
+import 'package:boca_app/models/authenticate_user.dart';
 import 'package:flutter/material.dart';
 import 'package:boca_app/pages/login/widgets/InputField.dart';
 import 'package:boca_app/pages/login/widgets/stragger_animation.dart';
-import 'package:boca_app/pages/home/home.dart';
 import 'package:boca_app/pages/usuario/cadastroUsuario.dart';
+import 'package:provider/provider.dart';
+import 'package:boca_app/blocs/user.block.dart';
+import 'package:boca_app/pages/login/widgets/LoginDialog.dart';
+
 
 class FormLogin extends StatefulWidget {
   @override
@@ -13,7 +18,10 @@ class _FormLoginState extends State<FormLogin>
  with SingleTickerProviderStateMixin{
 
   final _formKey = GlobalKey<FormState>();
+
   AnimationController _animationController;
+  var login = '';
+  var senha = '';
 
   @override
   void initState() {
@@ -25,10 +33,12 @@ class _FormLoginState extends State<FormLogin>
     );
 
     _animationController.addStatusListener((status) {
+
       if (status == AnimationStatus.completed) {
-        Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => HomePage()));
+        _animationController.reset();
+
       }
+
     });
   }
 
@@ -61,10 +71,14 @@ class _FormLoginState extends State<FormLogin>
                     obscure: false,
                     icon: Icons.person,
                     validar: (texto) {
+
                       if (texto.toString().trim().isEmpty) {
                         return "Informe o Login";
+                      }else{
+                        login = texto.toString().trim();
+                        return null;
                       }
-                      return null;
+
                     },
                     tipo: TextInputType.text,
                   ),
@@ -74,10 +88,14 @@ class _FormLoginState extends State<FormLogin>
                     obscure: true,
                     icon: Icons.lock,
                     validar: (texto){
+
                       if(texto.toString().trim().isEmpty){
                         return "Informe a Senha";
+                      }else{
+                        //senha = texto.toString().trim();
+                        return null;
                       }
-                      return null;
+
                     },
                   ),
                   const SizedBox(height: 30.0,),
@@ -85,8 +103,13 @@ class _FormLoginState extends State<FormLogin>
                     controller: _animationController.view,
                     widthDevice: MediaQuery.of(context).size.width / 1.2,
                     validar: (){
+
                       if(_formKey.currentState.validate()){
+                        _formKey.currentState.save();
+
                         _animationController.forward();
+                        authenticate(context);
+
                       }
                     },
                   ),
@@ -102,5 +125,38 @@ class _FormLoginState extends State<FormLogin>
         ],
       ),
     );
+  }
+
+  authenticate(BuildContext context) async{
+    var bloc = new UserBloc();
+    //var bloc = Provider.of<UserBloc>(context, listen: false);
+
+    var user = await bloc.authenticate(
+      new AuthenticateModel(
+        login: login,
+        senha: senha
+      ),
+    );
+
+
+    if(user != null){
+      showDialog(context: context,
+          builder: (BuildContext context){
+            return  BeautifulAlertDialog(titulo: "Aviso", msg: "Usuário Logado com Sucesso");
+
+      });
+
+
+    }else{
+      showDialog(context: context,
+          builder: (BuildContext context){
+            return  BeautifulAlertDialog(titulo: "Aviso", msg: "Usuário ou Senha Incorreta");
+          });
+      login = null;
+      senha = null;
+    }
+
+
+
   }
 }
