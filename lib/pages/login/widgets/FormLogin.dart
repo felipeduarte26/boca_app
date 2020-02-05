@@ -18,6 +18,11 @@ class _FormLoginState extends State<FormLogin>
  with SingleTickerProviderStateMixin{
 
   final _formKey = GlobalKey<FormState>();
+  final  controllerUsuario = TextEditingController();
+  final controllerSenha = TextEditingController();
+
+  bool ativarCampos = true;
+
 
   AnimationController _animationController;
   var login = '';
@@ -45,6 +50,8 @@ class _FormLoginState extends State<FormLogin>
   @override
   void dispose() {
     _animationController.dispose();
+    controllerUsuario.dispose();
+    controllerSenha.dispose();
     super.dispose();
   }
 
@@ -67,6 +74,8 @@ class _FormLoginState extends State<FormLogin>
               child: Column(
                 children: <Widget>[
                   InputField(
+                    ativo: ativarCampos,
+                    textController: controllerUsuario,
                     hint: 'Login',
                     obscure: false,
                     icon: Icons.person,
@@ -81,9 +90,12 @@ class _FormLoginState extends State<FormLogin>
 
                     },
                     tipo: TextInputType.text,
+
                   ),
                   const SizedBox(height: 20.0,),
                   InputField(
+                    ativo: ativarCampos,
+                    textController: controllerSenha,
                     hint: 'Senha',
                     obscure: true,
                     icon: Icons.lock,
@@ -92,7 +104,7 @@ class _FormLoginState extends State<FormLogin>
                       if(texto.toString().trim().isEmpty){
                         return "Informe a Senha";
                       }else{
-                        //senha = texto.toString().trim();
+                        senha = texto.toString().trim();
                         return null;
                       }
 
@@ -100,6 +112,7 @@ class _FormLoginState extends State<FormLogin>
                   ),
                   const SizedBox(height: 30.0,),
                   StaggerAnimation(
+                    textoButton: (ativarCampos == true ? "Entrar" : "Usuário já está Logado"),
                     controller: _animationController.view,
                     widthDevice: MediaQuery.of(context).size.width / 1.2,
                     validar: (){
@@ -129,7 +142,6 @@ class _FormLoginState extends State<FormLogin>
 
   authenticate(BuildContext context) async{
     var bloc = new UserBloc();
-    //var bloc = Provider.of<UserBloc>(context, listen: false);
 
     var user = await bloc.authenticate(
       new AuthenticateModel(
@@ -144,8 +156,12 @@ class _FormLoginState extends State<FormLogin>
           builder: (BuildContext context){
             return  BeautifulAlertDialog(titulo: "Aviso", msg: "Usuário Logado com Sucesso");
 
+
       });
 
+      setState(() {
+        ativarCampos = false;
+      });
 
     }else{
       showDialog(context: context,
@@ -154,6 +170,12 @@ class _FormLoginState extends State<FormLogin>
           });
       login = null;
       senha = null;
+      ativarCampos = true;
+      controllerUsuario.text = "";
+      controllerSenha.text = "";
+
+
+
     }
 
 

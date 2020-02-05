@@ -8,9 +8,10 @@ class InputField extends StatelessWidget {
   final TextInputType tipo;
   final TextEditingController textController;
   final FormFieldValidator validar;
+  final bool ativo;
 
 
-  InputField({this.hint, this.obscure, this.icon, this.textController, this.validar, this.tipo = TextInputType.text});
+  InputField({this.hint, this.obscure, this.icon, this.textController, this.validar, this.tipo = TextInputType.text, this.ativo = true});
 
 
   @override
@@ -39,6 +40,7 @@ class InputField extends StatelessWidget {
       ),
 
       child: TextFormField(
+        enabled: ativo,
         controller: textController,
         keyboardType: tipo,
         validator: validar,

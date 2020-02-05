@@ -5,8 +5,9 @@ class StaggerAnimation extends StatelessWidget {
   final AnimationController controller;
   final double widthDevice;
   final Function validar;
+  final String textoButton;
 
-  StaggerAnimation({this.controller, this.widthDevice, this.validar}):
+  StaggerAnimation({this.controller, this.widthDevice, this.validar, this.textoButton = "Entrar"}):
 
         buttonSqueeze = Tween(
             begin: widthDevice,
@@ -49,7 +50,7 @@ class StaggerAnimation extends StatelessWidget {
 
   Widget _buildInside(BuildContext context){
     if(buttonSqueeze.value > 75){
-      return  Text('ENTRAR', style: TextStyle(color:  Colors.white, fontWeight: FontWeight.bold) ,);
+      return  Text(textoButton, style: TextStyle(color:  Colors.white, fontWeight: FontWeight.bold) ,);
     } else{
       return CircularProgressIndicator(
         valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
