@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:boca_app/pages/home/widegts/AnimatedBottomNav.dart';
 import 'package:boca_app/pages/busca/busca.dart';

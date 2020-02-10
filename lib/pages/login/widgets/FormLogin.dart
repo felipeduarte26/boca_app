@@ -1,10 +1,9 @@
-import 'dart:math';
 import 'package:boca_app/models/authenticate_user.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:boca_app/pages/login/widgets/InputField.dart';
 import 'package:boca_app/pages/login/widgets/stragger_animation.dart';
 import 'package:boca_app/pages/usuario/cadastroUsuario.dart';
-import 'package:provider/provider.dart';
 import 'package:boca_app/blocs/user.block.dart';
 import 'package:boca_app/pages/login/widgets/LoginDialog.dart';
 

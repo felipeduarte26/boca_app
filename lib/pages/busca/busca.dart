@@ -1,32 +1,23 @@
+import 'package:boca_app/blocs/Oda.block.dart';
 import 'package:flutter/material.dart';
-import 'package:boca_app/pages/busca/widegts/Listar.dart';
+import 'package:boca_app/pages/busca/widegts/SelecionaOda.dart';
+import 'package:provider/provider.dart';
 
 class BuscaItens extends StatefulWidget {
+
   BuscaItens({Key key}) : super(key: key);
-  static final String path = "lib/src/pages/lists/list2.dart";
+
 
   _BuscaItens createState() => _BuscaItens();
 }
 
 class _BuscaItens extends State<BuscaItens> {
-  final TextStyle dropdownMenuItem =
-      TextStyle(color: Colors.black, fontSize: 18);
 
-  final List<Map> ItensList = [
-    {
-      "nome": "ARCO-IRIS",
-      "img":
-          "https://bocaweb.s3.amazonaws.com/imagem-ARCO-IRIS.jpg?AWSAccessKeyId=AKIAIT73QSIVYDWUFJPA&Expires=1580705553&Signature=6SJw4VkvZXNBePEGsZQeuzGpwzs%3D"
-    },
-    {
-      "nome": "MENINO GATO- DESENHO ANIMADO",
-      "img":
-          "https://bocaweb.s3.amazonaws.com/imagem-MENINO%20GATO-%20DESENHO%20ANIMADO.jpg?AWSAccessKeyId=AKIAIT73QSIVYDWUFJPA&Expires=1580705652&Signature=xWTCySQsCfG7I1rIugG5vK%2FUiHs%3D"
-    },
-  ];
+  final TextStyle dropdownMenuItem = TextStyle(color: Colors.black, fontSize: 18);
 
   @override
   Widget build(BuildContext context) {
+    final OdaBlock bloc = Provider.of<OdaBlock>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -41,15 +32,12 @@ class _BuscaItens extends State<BuscaItens> {
           child: Stack(
             children: <Widget>[
               Container(
-                padding: EdgeInsets.only(top: 160),
+                padding: EdgeInsets.only(top: 130),
                 height: MediaQuery.of(context).size.height,
                 width: double.infinity,
-                child: ListView.builder(
-                    itemCount: ItensList.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return ListarItens(context: context, index: index, Item: ItensList);
-                      }
-                    ),
+                child: SelecionaOda(
+                  oda: bloc.Oda,
+                ),
               ),
               Container(
                 height: 50,
