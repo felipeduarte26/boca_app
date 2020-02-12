@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:boca_app/models/OdaModel.dart';
 import 'package:boca_app/pages/busca/widegts/Loader.dart';
+import 'package:boca_app/pages/Oda/Oda.dart';
 
 
 class SelecionaOda extends StatelessWidget {
@@ -44,7 +45,16 @@ class SelecionaOda extends StatelessWidget {
                 ListTile(
                    title: Text(oda[index].nome, textAlign: TextAlign.center, style: TextStyle(color: Colors.white),),
                    trailing: Icon(Icons.keyboard_arrow_right, color: Colors.white,),
-                   onTap: (){}
+                   onTap: (){
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => Oda(img: oda[index].imagem,
+                                                                                         texto1: oda[index].texto1,
+                                                                                         texto2: oda[index].texto2,
+                                                                                         texto3: oda[index].texto3,
+                                                                                         audio1: oda[index].audio1,
+                                                                                         audio2: oda[index].audio2,
+                                                                                         audio3: oda[index].audio3,
+                                                                                         nome: oda[index].nome)));
+                   }
                 ),
 
                 ],
