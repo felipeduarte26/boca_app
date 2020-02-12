@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:boca_app/settings.dart';
+
+
 
 class Oda extends StatefulWidget {
   final String img;
@@ -9,6 +13,9 @@ class Oda extends StatefulWidget {
   final String audio2;
   final String audio3;
   final String nome;
+
+  AudioPlayer audioPlayer = AudioPlayer();
+
 
   Oda({@required this.img,
        @required this.texto1,
@@ -28,6 +35,8 @@ class _OdaState extends State<Oda> {
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
        appBar: AppBar(
          title: Text(widget.nome),
@@ -39,7 +48,7 @@ class _OdaState extends State<Oda> {
             Container(
               height: 300.0,
               width: double.infinity,
-              child: Image.network("https://img.ibxk.com.br/2019/10/29/flutter-29101357380259.jpg?w=328", fit: BoxFit.fill,),
+              child: Image.network(Settings.urlOda+widget.img, fit: BoxFit.fill,),
             ),
 
             Padding(padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
@@ -53,9 +62,9 @@ class _OdaState extends State<Oda> {
                     width: double.infinity,
                     child: RaisedButton(
                       color: Colors.green,
-                      onPressed: (){
-
-                      },
+                      onPressed: () async{
+                          int result = await widget.audioPlayer.play(Settings.urlOda+widget.audio1, isLocal:  false);
+                        },
                       child: Text('Tocar',style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -66,8 +75,8 @@ class _OdaState extends State<Oda> {
                     width: double.infinity,
                     child: RaisedButton(
                       color: Colors.green,
-                      onPressed: (){
-
+                      onPressed: () async{
+                        int result = await widget.audioPlayer.play(Settings.urlOda+widget.audio2, isLocal:  false);
                       },
                       child: Text('Nível Básico',style: TextStyle(color: Colors.white),
                       ),
@@ -80,8 +89,8 @@ class _OdaState extends State<Oda> {
                     width: double.infinity,
                     child: RaisedButton(
                       color: Colors.green,
-                      onPressed: (){
-
+                      onPressed: () async{
+                        int result = await widget.audioPlayer.play(Settings.urlOda+widget.audio3, isLocal:  false);
                       },
                       child: Text('Nível Avançado',style: TextStyle(color: Colors.white),
                       ),
