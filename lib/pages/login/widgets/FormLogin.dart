@@ -6,7 +6,7 @@ import 'package:boca_app/pages/login/widgets/stragger_animation.dart';
 import 'package:boca_app/pages/usuario/cadastroUsuario.dart';
 import 'package:boca_app/blocs/user.block.dart';
 import 'package:boca_app/pages/login/widgets/LoginDialog.dart';
-
+import 'package:boca_app/settings.dart';
 
 class FormLogin extends StatefulWidget {
   @override
@@ -140,6 +140,7 @@ class _FormLoginState extends State<FormLogin>
   }
 
   authenticate(BuildContext context) async{
+    Settings.user = null;
     var bloc = new UserBloc();
 
     var user = await bloc.authenticate(

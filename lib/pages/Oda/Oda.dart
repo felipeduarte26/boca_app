@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:boca_app/settings.dart';
-
-
+import 'package:boca_app/pages/login/widgets/LoginDialog.dart';
 
 class Oda extends StatefulWidget {
   final String img;
@@ -14,7 +13,7 @@ class Oda extends StatefulWidget {
   final String audio3;
   final String nome;
 
-  AudioPlayer audioPlayer = AudioPlayer();
+  AudioPlayer _audioPlayer = AudioPlayer();
 
 
   Oda({@required this.img,
@@ -32,6 +31,13 @@ class Oda extends StatefulWidget {
 }
 
 class _OdaState extends State<Oda> {
+
+  @override
+  void dispose(){
+    print("destruiu");
+    widget._audioPlayer.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +69,7 @@ class _OdaState extends State<Oda> {
                     child: RaisedButton(
                       color: Colors.green,
                       onPressed: () async{
-                          int result = await widget.audioPlayer.play(Settings.urlOda+widget.audio1, isLocal:  false);
+                          int result = await widget._audioPlayer.play(Settings.urlOda+widget.audio1, isLocal:  false);
                         },
                       child: Text('Tocar',style: TextStyle(color: Colors.white),
                       ),
@@ -76,7 +82,14 @@ class _OdaState extends State<Oda> {
                     child: RaisedButton(
                       color: Colors.green,
                       onPressed: () async{
-                        int result = await widget.audioPlayer.play(Settings.urlOda+widget.audio2, isLocal:  false);
+
+                        if(Settings.user != null){
+                          int result = await widget._audioPlayer.play(Settings.urlOda+widget.audio2, isLocal:  false);
+                        }else{
+                          AvisoAlert(context);
+                        }
+
+
                       },
                       child: Text('Nível Básico',style: TextStyle(color: Colors.white),
                       ),
@@ -90,7 +103,12 @@ class _OdaState extends State<Oda> {
                     child: RaisedButton(
                       color: Colors.green,
                       onPressed: () async{
-                        int result = await widget.audioPlayer.play(Settings.urlOda+widget.audio3, isLocal:  false);
+                        if(Settings.user != null){
+                          int result = await widget._audioPlayer.play(Settings.urlOda+widget.audio3, isLocal:  false);
+                        }else{
+                          AvisoAlert(context);
+                        }
+
                       },
                       child: Text('Nível Avançado',style: TextStyle(color: Colors.white),
                       ),
@@ -108,6 +126,13 @@ class _OdaState extends State<Oda> {
       ),
 
     );
+  }
+
+ Future<Widget> AvisoAlert(BuildContext context){
+    return  showDialog(context: context,
+        builder: (BuildContext context){
+          return  BeautifulAlertDialog(titulo: "Aviso", msg: "Faça o Login para ter acesso aos níveis Intermediários e avançado");
+        });
   }
 }
 
