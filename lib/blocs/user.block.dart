@@ -23,6 +23,7 @@ class UserBloc extends ChangeNotifier{
         user = res;
 
         await prefs.setString('user', jsonEncode(res));
+        notifyListeners();
         return user;
       }catch(ex){
         user = null;
@@ -46,6 +47,7 @@ class UserBloc extends ChangeNotifier{
       var res = UserModel.fromJson(jsonDecode(userData));
       Settings.user = res;
       user = res;
+      notifyListeners();
     }
 
   }

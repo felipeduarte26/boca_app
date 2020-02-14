@@ -2,6 +2,7 @@ import 'pages/home/home.dart';
 import 'package:provider/provider.dart';
 import 'blocs/Oda.block.dart';
 import 'package:flutter/material.dart';
+import 'blocs/user.block.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,6 +13,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers: [
           ChangeNotifierProvider<OdaBlock>.value(value: OdaBlock()),
+          ChangeNotifierProvider<UserBloc>.value(value: UserBloc()),
+
         ],
         child: MaterialApp(
           title: 'Boca - App',

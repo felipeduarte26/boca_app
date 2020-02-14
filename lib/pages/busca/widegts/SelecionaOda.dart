@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:boca_app/models/OdaModel.dart';
 import 'package:boca_app/pages/busca/widegts/Loader.dart';
@@ -8,8 +9,9 @@ class SelecionaOda extends StatelessWidget {
 
   final List<OdaModel> oda;
 
+  final String filtrar;
 
-  SelecionaOda({@required this.oda});
+  SelecionaOda({@required this.oda, @ required this.filtrar});
 
   @override
   Widget build(BuildContext context) {
@@ -42,20 +44,8 @@ class SelecionaOda extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                ListTile(
-                   title: Text(oda[index].nome, textAlign: TextAlign.center, style: TextStyle(color: Colors.white),),
-                   trailing: Icon(Icons.keyboard_arrow_right, color: Colors.white,),
-                   onTap: (){
-                     Navigator.push(context, MaterialPageRoute(builder: (context) => Oda(img: oda[index].imagem,
-                                                                                         texto1: oda[index].texto1,
-                                                                                         texto2: oda[index].texto2,
-                                                                                         texto3: oda[index].texto3,
-                                                                                         audio1: oda[index].audio1,
-                                                                                         audio2: oda[index].audio2,
-                                                                                         audio3: oda[index].audio3,
-                                                                                         nome: oda[index].nome)));
-                   }
-                ),
+
+                  FiltroLista(context, index),
 
                 ],
               ),
@@ -65,6 +55,34 @@ class SelecionaOda extends StatelessWidget {
           );
         }
     );
+  }
+
+  Widget FiltroLista(BuildContext context, int index ){
+
+    if(filtrar == null || filtrar.trim().isEmpty){
+      return  ListTile(
+          title: Text(oda[index].nome, textAlign: TextAlign.center, style: TextStyle(color: Colors.white),),
+          trailing: Icon(Icons.keyboard_arrow_right, color: Colors.white,),
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Oda(oda: oda[index],)));
+          }
+      );
+    }else{
+
+      if(oda[index].nome.contains(filtrar)){
+        return  ListTile(
+            title: Text(oda[index].nome, textAlign: TextAlign.center, style: TextStyle(color: Colors.white),),
+            trailing: Icon(Icons.keyboard_arrow_right, color: Colors.white,),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Oda(oda: oda[index],)));
+            }
+        );
+
+      }else{
+        return  Container();
+
+      }
+    }
   }
 
 }
