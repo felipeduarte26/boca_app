@@ -1,13 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:boca_app/models/EmailModel.dart' as Femail;
 
 
 class email extends StatelessWidget {
 
   final _formKey = GlobalKey<FormState>();
-  TextEditingController _controllerEmail;
-  TextEditingController _controllerNome;
-  TextEditingController _controllerTexto;
+  final Femail.email e_mail = Femail.email();
+
+  TextEditingController _controllerEmail = new TextEditingController();
+  TextEditingController _controllerNome = new TextEditingController();
+  TextEditingController _controllerTexto = new TextEditingController();
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +41,11 @@ class email extends StatelessWidget {
                   children: <Widget>[
                     const SizedBox(height: 30.0),
                     TextFormField(
+                      validator: (texto){
+                        if(texto.trim().isEmpty){
+                          return 'Informe o Seu Nome';
+                        } else return null;
+                      },
                       controller: _controllerNome,
                       keyboardType: TextInputType.text,
                       textInputAction: TextInputAction.done,
@@ -50,6 +61,12 @@ class email extends StatelessWidget {
                     ),
                     const SizedBox(height: 30.0),
                     TextFormField(
+
+                      validator: (texto){
+                         if(texto.trim().length < 3 || !texto.contains('@')){
+                           return 'Informe o Seu e-mail';
+                         } else return null;
+                      },
                       controller: _controllerEmail,
                       keyboardType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.done,
@@ -91,7 +108,22 @@ class email extends StatelessWidget {
                         color: Colors.green,
                         onPressed: (){
 
-                        },
+
+                          if(_formKey.currentState.validate()){
+
+                              e_mail.Nome = _controllerNome.text;
+                              e_mail.Email = _controllerEmail.text;
+                              e_mail.Texto = _controllerTexto.text;
+                              e_mail.enviar();
+
+                              _controllerNome.text = "";
+                              _controllerEmail.text = "";
+                              _controllerTexto.text = "";
+
+
+
+                          }
+                       },
                         child: Text(
                           'Enviar',
                           style: TextStyle(color: Colors.white),
