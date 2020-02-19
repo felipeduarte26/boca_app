@@ -83,22 +83,17 @@ class _HomePageState extends State<HomePage> {
                 ListHome(
                     texto: "Informações Legais",
                     ico: Icons.announcement,
-                    onTap: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => InfoLegais()))),
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => InfoLegais()))),
                 _buildDivider(),
                 ListHome(
                     texto: "Informações de Funcionamento",
                     ico: Icons.info,
-                    onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Funcionamento()))),
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Funcionamento()))),
                 _buildDivider(),
                 ListHome(
                     texto: "Fale Conosco",
                     ico: Icons.phone,
-                    onTap: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => email()))),
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => email()))),
               ],
             ),
           ),

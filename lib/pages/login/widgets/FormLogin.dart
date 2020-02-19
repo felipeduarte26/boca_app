@@ -7,6 +7,7 @@ import 'package:boca_app/pages/usuario/cadastroUsuario.dart';
 import 'package:boca_app/blocs/user.block.dart';
 import 'package:boca_app/pages/login/widgets/LoginDialog.dart';
 import 'package:boca_app/settings.dart';
+import 'package:provider/provider.dart';
 
 class FormLogin extends StatefulWidget {
   @override
@@ -19,9 +20,6 @@ class _FormLoginState extends State<FormLogin>
   final _formKey = GlobalKey<FormState>();
   final  controllerUsuario = TextEditingController();
   final controllerSenha = TextEditingController();
-
-  bool ativarCampos = true;
-
 
   AnimationController _animationController;
   var login = '';
@@ -40,7 +38,6 @@ class _FormLoginState extends State<FormLogin>
 
       if (status == AnimationStatus.completed) {
         _animationController.reset();
-
       }
 
     });
@@ -73,7 +70,6 @@ class _FormLoginState extends State<FormLogin>
               child: Column(
                 children: <Widget>[
                   InputField(
-                    ativo: ativarCampos,
                     textController: controllerUsuario,
                     hint: 'Login',
                     obscure: false,
@@ -93,7 +89,6 @@ class _FormLoginState extends State<FormLogin>
                   ),
                   const SizedBox(height: 20.0,),
                   InputField(
-                    ativo: ativarCampos,
                     textController: controllerSenha,
                     hint: 'Senha',
                     obscure: true,
@@ -111,7 +106,7 @@ class _FormLoginState extends State<FormLogin>
                   ),
                   const SizedBox(height: 30.0,),
                   StaggerAnimation(
-                    textoButton: (ativarCampos == true ? "Entrar" : "Usuário já está Logado"),
+                    textoButton: (Settings.user == null ? "Entrar" : "Usuário já está Logado"),
                     controller: _animationController.view,
                     widthDevice: MediaQuery.of(context).size.width / 1.2,
                     validar: (){
@@ -141,7 +136,7 @@ class _FormLoginState extends State<FormLogin>
 
   authenticate(BuildContext context) async{
     Settings.user = null;
-    var bloc = new UserBloc();
+    final UserBloc bloc = Provider.of<UserBloc>(context);
 
     var user = await bloc.authenticate(
       new AuthenticateModel(
@@ -159,10 +154,6 @@ class _FormLoginState extends State<FormLogin>
 
       });
 
-      setState(() {
-        ativarCampos = false;
-      });
-
     }else{
       showDialog(context: context,
           builder: (BuildContext context){
@@ -170,12 +161,8 @@ class _FormLoginState extends State<FormLogin>
           });
       login = null;
       senha = null;
-      ativarCampos = true;
       controllerUsuario.text = "";
       controllerSenha.text = "";
-
-
-
     }
 
 

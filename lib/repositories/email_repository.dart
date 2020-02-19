@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 
 abstract class EmailRepository{
 
-
   Future<int> sendEmail(Map<String, dynamic> data) async{
 
     var url = "${Settings.apiURL}usuario/email";

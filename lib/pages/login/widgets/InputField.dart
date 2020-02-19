@@ -10,7 +10,6 @@ class InputField extends StatelessWidget {
   final FormFieldValidator validar;
   final bool ativo;
 
-
   InputField({this.hint, this.obscure, this.icon, this.textController, this.validar, this.tipo = TextInputType.text, this.ativo = true});
 
 

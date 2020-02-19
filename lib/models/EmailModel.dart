@@ -5,12 +5,12 @@ class email extends EmailRepository {
    String _nome;
    String _email;
    String _texto;
-   
+
    set Nome(String value)=> _nome   = value;
    set Email(String value)=> _email = value;
    set Texto(String value)=> _texto  = value;
 
-    Future<int> enviar() async{
+     Future<bool> enviar() async {
 
      final Map<String, dynamic> data = new Map<String, dynamic>();
 
@@ -18,7 +18,7 @@ class email extends EmailRepository {
      data['email'] = _email;
      data['texto'] = _texto;
 
-     return sendEmail(data);
+     return (await sendEmail(data) == 200);
     }
 
 }

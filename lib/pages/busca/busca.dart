@@ -13,11 +13,12 @@ class BuscaItens extends StatefulWidget {
 
 class _BuscaItens extends State<BuscaItens> {
   final TextEditingController Filtro = new TextEditingController();
-
   final TextStyle dropdownMenuItem = TextStyle(color: Colors.black, fontSize: 18);
+  String FilterText = "";
+
+
 
   @override
-
   void initState(){
     Filtro.text = null;
   }
@@ -45,7 +46,7 @@ class _BuscaItens extends State<BuscaItens> {
                 width: double.infinity,
                 child: SelecionaOda(
 
-                  oda: bloc.Oda, filtrar: Filtro.text,
+                  oda: bloc.Oda, filtrar: FilterText,
                 ),
               ),
               Container(
@@ -81,7 +82,7 @@ class _BuscaItens extends State<BuscaItens> {
                         elevation: 5.0,
                         borderRadius: BorderRadius.all(Radius.circular(30)),
                         child: TextField(
-                          onSubmitted: FiltraTexto,
+                          onChanged: FiltraTexto,
                           controller: Filtro,
                           cursorColor: Theme.of(context).primaryColor,
                           style: dropdownMenuItem,
@@ -115,9 +116,8 @@ class _BuscaItens extends State<BuscaItens> {
 
     setState(() {
       if(texto!= null || texto.trim().isEmpty){
-        Filtro.text = Filtro.text.trim().toUpperCase();
-        print(Filtro.text);
-      }else Filtro.text = null;
+        FilterText =  Filtro.text.trim().toUpperCase();
+      }else FilterText = null;
     });
 
 
