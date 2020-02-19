@@ -30,7 +30,6 @@ class _loginState extends State<login> {
     );
   }
 }
-
 _alertDialog(BuildContext context, String titulo, String msg){
   showDialog(context: context,
   builder:(BuildContext context){

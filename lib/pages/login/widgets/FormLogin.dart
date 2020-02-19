@@ -39,7 +39,6 @@ class _FormLoginState extends State<FormLogin>
       if (status == AnimationStatus.completed) {
         _animationController.reset();
       }
-
     });
   }
 
@@ -105,18 +104,20 @@ class _FormLoginState extends State<FormLogin>
                     },
                   ),
                   const SizedBox(height: 30.0,),
+
                   StaggerAnimation(
-                    textoButton: (Settings.user == null ? "Entrar" : "Usuário já está Logado"),
                     controller: _animationController.view,
                     widthDevice: MediaQuery.of(context).size.width / 1.2,
-                    validar: (){
+                    validar: () async{
 
                       if(_formKey.currentState.validate()){
                         _formKey.currentState.save();
 
                         _animationController.forward();
-                        authenticate(context);
 
+                        if(await authenticate(context)){
+                          _animationController.reset();
+                        }
                       }
                     },
                   ),
@@ -134,9 +135,11 @@ class _FormLoginState extends State<FormLogin>
     );
   }
 
-  authenticate(BuildContext context) async{
+Future<bool> authenticate(BuildContext context) async{
     Settings.user = null;
-    final UserBloc bloc = Provider.of<UserBloc>(context);
+
+    final UserBloc bloc =  new UserBloc();
+
 
     var user = await bloc.authenticate(
       new AuthenticateModel(
@@ -145,8 +148,7 @@ class _FormLoginState extends State<FormLogin>
       ),
     );
 
-
-    if(user != null){
+    if(Settings.user != null){
       showDialog(context: context,
           builder: (BuildContext context){
             return  BeautifulAlertDialog(titulo: "Aviso", msg: "Usuário Logado com Sucesso");
@@ -159,13 +161,12 @@ class _FormLoginState extends State<FormLogin>
           builder: (BuildContext context){
             return  BeautifulAlertDialog(titulo: "Aviso", msg: "Usuário ou Senha Incorreta");
           });
+
       login = null;
       senha = null;
-      controllerUsuario.text = "";
-      controllerSenha.text = "";
     }
 
-
+    return (user != null);
 
   }
 }

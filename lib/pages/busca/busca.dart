@@ -12,17 +12,15 @@ class BuscaItens extends StatefulWidget {
 }
 
 class _BuscaItens extends State<BuscaItens> {
+
   final TextEditingController Filtro = new TextEditingController();
   final TextStyle dropdownMenuItem = TextStyle(color: Colors.black, fontSize: 18);
   String FilterText = "";
-
-
 
   @override
   void initState(){
     Filtro.text = null;
   }
-
 
   @override
   Widget build(BuildContext context) {

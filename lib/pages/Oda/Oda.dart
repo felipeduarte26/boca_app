@@ -20,6 +20,13 @@ class Oda extends StatefulWidget {
 class _OdaState extends State<Oda> {
 
   @override
+  void initState() {
+    widget._audioPlayer.pause();
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   void dispose(){
     widget._audioPlayer.dispose();
     super.dispose();
@@ -59,6 +66,7 @@ class _OdaState extends State<Oda> {
                   SizedBox(height: 20.0,),
 
                   buttonAudio(texto: 'Tocar', ClickButton: () async{
+                      widget._audioPlayer.pause();
                       int result = await widget._audioPlayer.play(Settings.urlOda+widget.oda.audio1, isLocal:  false);
 
                       if(result != 1){
@@ -71,6 +79,7 @@ class _OdaState extends State<Oda> {
 
                   buttonAudio(texto: 'Nível Básico', ClickButton: ()async{
 
+                    widget._audioPlayer.pause();
                     if(Settings.user != null){
                         int result = await widget._audioPlayer.play(Settings.urlOda+widget.oda.audio2, isLocal:  false);
 
@@ -87,7 +96,8 @@ class _OdaState extends State<Oda> {
                   SizedBox(height: 5.0,),
 
                   buttonAudio(texto: 'Nível Avançado', ClickButton: () async{
-                      if(Settings.user != null){
+                    widget._audioPlayer.pause();
+                    if(Settings.user != null){
 
                         int result = await widget._audioPlayer.play(Settings.urlOda+widget.oda.audio3, isLocal:  false);
 

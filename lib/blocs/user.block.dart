@@ -10,6 +10,7 @@ class UserBloc extends ChangeNotifier{
   var user = new UserModel();
 
   UserBloc(){
+    Settings.user = null;
     user = null;
     loadUser();
   }
