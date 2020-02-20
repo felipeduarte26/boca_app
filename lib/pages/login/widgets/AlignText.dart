@@ -19,7 +19,9 @@ class AlignText extends StatelessWidget {
         style: TextStyle(
             color: cor,
             fontWeight: fonte,
-            fontSize: tamanoFonte),
+            fontSize: tamanoFonte,
+            decoration: TextDecoration.none
+        ),
         textAlign: textoAlinhamento,
       ),
     );

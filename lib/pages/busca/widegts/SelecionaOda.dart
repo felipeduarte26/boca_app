@@ -45,8 +45,6 @@ class SelecionaOda extends StatelessWidget {
                 ],
               ),
             ),
-
-
           );
         }
     );

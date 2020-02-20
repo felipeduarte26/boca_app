@@ -91,7 +91,7 @@ class _BuscaItens extends State<BuscaItens> {
                               prefixIcon: Material(
                                 elevation: 0.0,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(30)),
+                                BorderRadius.all(Radius.circular(30)),
                                 child: Icon(Icons.search),
                               ),
                               border: InputBorder.none,

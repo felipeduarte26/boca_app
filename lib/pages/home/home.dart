@@ -61,10 +61,10 @@ class _HomePageState extends State<HomePage> {
     switch (page) {
       case 0: //Buscar
         return BuscaItens();
-      case 1: //Login
-        return login();
+      /*case 1: //Login
+        return login();*/
 
-      case 2: //Informacoes
+      case 1: //Informacoes
         return Container(
           alignment: Alignment.center,
           padding: EdgeInsets.only(top: 200.0, bottom: 250.0),
@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage> {
           ),
         );
 
-      case 3: //Dados
+      case 2: //Dados
         return Container(
           padding: EdgeInsets.zero,
           decoration: BoxDecoration(

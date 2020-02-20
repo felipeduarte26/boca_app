@@ -6,17 +6,14 @@ class TopoLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage('images/fundo.jpg'), fit: BoxFit.none),
-      ),
       width:  MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height / 2.5,
+      height: MediaQuery.of(context).size.height / 2.7,
       child: Column(
         children: <Widget>[
           Align(
             alignment: Alignment.center,
             child: Padding(
-              padding: EdgeInsets.only(top: 60),
+              padding: EdgeInsets.only(top: 50.0),
               child: Image.asset(
                 "images/logo.png",
                 width: 350,

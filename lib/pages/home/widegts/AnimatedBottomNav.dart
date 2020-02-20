@@ -28,8 +28,8 @@ class AnimatedBottomNav extends StatelessWidget {
             child: InkWell(
               onTap: () => onChange(1),
               child: BottomNavItem(
-                icon: Icons.power_settings_new,
-                title: "Logar",
+                icon: Icons.info,
+                title: "Informações",
                 isActive: currentIndex == 1,
               ),
             ),
@@ -38,19 +38,9 @@ class AnimatedBottomNav extends StatelessWidget {
             child: InkWell(
               onTap: () => onChange(2),
               child: BottomNavItem(
-                icon: Icons.info,
-                title: "Informações",
-                isActive: currentIndex == 2,
-              ),
-            ),
-          ),
-          Expanded(
-            child: InkWell(
-              onTap: () => onChange(3),
-              child: BottomNavItem(
                 icon: Icons.account_circle,
                 title: "administrador",
-                isActive: currentIndex == 3,
+                isActive: currentIndex == 2,
               ),
             ),
           ),

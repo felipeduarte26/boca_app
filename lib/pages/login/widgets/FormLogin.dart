@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:boca_app/models/authenticate_user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -7,7 +9,7 @@ import 'package:boca_app/pages/usuario/cadastroUsuario.dart';
 import 'package:boca_app/blocs/user.block.dart';
 import 'package:boca_app/pages/login/widgets/LoginDialog.dart';
 import 'package:boca_app/settings.dart';
-import 'package:provider/provider.dart';
+import 'package:boca_app/pages/home/home.dart';
 
 class FormLogin extends StatefulWidget {
   @override
@@ -53,9 +55,6 @@ class _FormLoginState extends State<FormLogin>
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage('images/fundo.jpg'), fit: BoxFit.none),
-      ),
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 2,
       child: Column(
@@ -117,15 +116,52 @@ class _FormLoginState extends State<FormLogin>
 
                         if(await authenticate(context)){
                           _animationController.reset();
+                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomePage()));
+                        }else{
+                          showDialog(context: context,
+                              builder: (BuildContext context){
+                                return  BeautifulAlertDialog(titulo: "Aviso", msg: "Usuário ou Senha Incorreta");
+                              });
+
+                          login = null;
+                          senha = null;
                         }
                       }
                     },
                   ),
-                  const SizedBox(height: 50.0,),
+                  const SizedBox(height: 30.0,),
+
+                  InkWell(
+                    onTap: (){
+                      Settings.user = null;
+                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomePage()));
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [
+                              Colors.blue.shade800 ,// Color(0xff4169e1),
+                              Colors.blue  //Color(0xff4682b4)
+                            ]
+                        ) ,
+                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                      ),
+                      alignment: Alignment.center,
+                      width:  MediaQuery.of(context).size.width / 1.2,
+                      height: 60.0,
+                      child: Text("Entrar como Visitante", style: TextStyle(color: Colors.white), textAlign: TextAlign.center, ),
+                    ),
+                  ),
+                  const SizedBox(height: 30.0,),
                   InkWell(
                     onTap: ()=>  Navigator.push(context, MaterialPageRoute(builder: (context) => CadUsuario())),
-                    child: const Text('Criar uma nova Conta?', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      child: const Text('Criar uma nova Conta?', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
+                    )
                   ),
+
+
                 ],
               ),
             ),
@@ -148,7 +184,7 @@ Future<bool> authenticate(BuildContext context) async{
       ),
     );
 
-    if(Settings.user != null){
+    /*if(Settings.user != null){
       showDialog(context: context,
           builder: (BuildContext context){
             return  BeautifulAlertDialog(titulo: "Aviso", msg: "Usuário Logado com Sucesso");
@@ -164,7 +200,7 @@ Future<bool> authenticate(BuildContext context) async{
 
       login = null;
       senha = null;
-    }
+    }*/
 
     return (user != null);
 
