@@ -6,7 +6,7 @@ import 'package:boca_app/pages/login/widgets/topo.dart';
 import 'package:flutter/services.dart';
 import 'package:boca_app/pages/login/widgets/FormLogin.dart';
 import 'package:boca_app/pages/login/widgets/LoginDialog.dart';
-import 'package:boca_app/pages/login/widgets/AlignText.dart';
+import 'package:boca_app/pages/usuario/cadastroUsuario.dart';
 
 class login extends StatefulWidget {
   @override
@@ -26,6 +26,14 @@ class _loginState extends State<login> {
             children: <Widget>[
               TopoLogin(),
               FormLogin(),
+              InkWell(
+                  onTap: ()=>  Navigator.push(context, MaterialPageRoute(builder: (context) => CadUsuario())),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width / 1.2,
+                    child: const Text('Criar uma nova Conta?', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
+                  )
+              ),
+
             ],
           ),
         ),

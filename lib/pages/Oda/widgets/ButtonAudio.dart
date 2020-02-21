@@ -15,8 +15,8 @@ class buttonAudio extends StatelessWidget {
       child: RaisedButton(
         color: Colors.green,
         onPressed: ClickButton,
-        child: Text(texto,style: TextStyle(color: Colors.white),
-        ),
+        child: Text(texto,style: TextStyle(color: Colors.white)),
+
       ),
     );
   }

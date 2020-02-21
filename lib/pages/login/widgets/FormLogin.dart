@@ -1,11 +1,8 @@
-import 'dart:ffi';
-
 import 'package:boca_app/models/authenticate_user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:boca_app/pages/login/widgets/InputField.dart';
 import 'package:boca_app/pages/login/widgets/stragger_animation.dart';
-import 'package:boca_app/pages/usuario/cadastroUsuario.dart';
 import 'package:boca_app/blocs/user.block.dart';
 import 'package:boca_app/pages/login/widgets/LoginDialog.dart';
 import 'package:boca_app/settings.dart';
@@ -129,8 +126,8 @@ class _FormLoginState extends State<FormLogin>
                       }
                     },
                   ),
-                  const SizedBox(height: 30.0,),
 
+                  const SizedBox(height: 30.0,),
                   InkWell(
                     onTap: (){
                       Settings.user = null;
@@ -152,15 +149,6 @@ class _FormLoginState extends State<FormLogin>
                       child: Text("Entrar como Visitante", style: TextStyle(color: Colors.white), textAlign: TextAlign.center, ),
                     ),
                   ),
-                  const SizedBox(height: 30.0,),
-                  InkWell(
-                    onTap: ()=>  Navigator.push(context, MaterialPageRoute(builder: (context) => CadUsuario())),
-                    child: Container(
-                      width: MediaQuery.of(context).size.width / 1.2,
-                      child: const Text('Criar uma nova Conta?', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
-                    )
-                  ),
-
 
                 ],
               ),
