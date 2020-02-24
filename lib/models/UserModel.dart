@@ -1,4 +1,6 @@
-class UserModel {
+import 'package:boca_app/repositories/account_repository.dart';
+
+class UserModel extends AccountRepository{
   String sId;
   String login;
   String senha;
@@ -27,7 +29,9 @@ class UserModel {
   }
 
   Map<String, dynamic> toJson() {
+
     final Map<String, dynamic> data = new Map<String, dynamic>();
+
     data['_id'] = this.sId;
     data['login'] = this.login;
     data['senha'] = this.senha;
@@ -35,6 +39,18 @@ class UserModel {
     data['nome'] = this.nome;
     data['email'] = this.email;
     data['perfil'] = this.perfil;
+
     return data;
+  }
+
+  Future<bool> CreateUser() async{
+    int status = 0;
+    try{
+      status = await Create(toJson());
+    }finally{
+      return (status == 200);
+    }
+
+
   }
 }

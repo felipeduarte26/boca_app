@@ -2,9 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:boca_app/models/EmailModel.dart' as Femail;
 import 'package:boca_app/pages/login/widgets/LoginDialog.dart';
+import 'package:boca_app/pages/usuario/widgets/Dialogs.dart';
 
 class email extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
+  final GlobalKey<State> _keyLoader = new GlobalKey<State>();
   final Femail.email e_mail = Femail.email();
 
   TextEditingController _controllerEmail = new TextEditingController();
@@ -97,32 +99,40 @@ class email extends StatelessWidget {
                     child: RaisedButton(
                       color: Colors.green,
                       onPressed: () async{
+
                         if (_formKey.currentState.validate()) {
+
+                          Dialogs.showLoadingDialog(context, _keyLoader);//invoking login
+
                           e_mail.Nome = _controllerNome.text;
                           e_mail.Email = _controllerEmail.text;
                           e_mail.Texto = _controllerTexto.text;
 
                             if(await e_mail.enviar()){
-                             _controllerNome.text = "";
-                             _controllerEmail.text = "";
-                             _controllerTexto.text = "";
+                              _controllerNome.text = "";
+                              _controllerEmail.text = "";
+                              _controllerTexto.text = "";
+                              Navigator.of(_keyLoader.currentContext,rootNavigator: true).pop();
+                              showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return BeautifulAlertDialog(
+                                        titulo: "Aviso",
+                                        msg: "E-mail Enviado com Sucesso");
+                                  });
+                            }else{
+                              Navigator.of(_keyLoader.currentContext,rootNavigator: true).pop();
+                              showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return BeautifulAlertDialog(
+                                        titulo: "Aviso",
+                                        msg: "Ocorreu um erro ao tentar enviar o E-mail");
+                                  });
+                            }
 
-                             showDialog(
-                                 context: context,
-                                 builder: (BuildContext context) {
-                                   return BeautifulAlertDialog(
-                                       titulo: "Aviso",
-                                       msg: "E-mail Enviado com Sucesso");
-                                 });
-                           }else{
-                             showDialog(
-                                 context: context,
-                                 builder: (BuildContext context) {
-                                   return BeautifulAlertDialog(
-                                       titulo: "Aviso",
-                                       msg: "Ocorreu um erro ao tentar enviar o E-mail");
-                                 });
-                           }
+
+
 
                         }
                       },

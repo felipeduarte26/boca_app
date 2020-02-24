@@ -2,11 +2,12 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:boca_app/pages/home/widegts/AnimatedBottomNav.dart';
 import 'package:boca_app/pages/busca/busca.dart';
-import 'package:boca_app/pages/login/login.dart';
 import 'package:boca_app/pages/home/widegts/ListHome.dart';
 import 'package:boca_app/pages/Info/informacoesLegais.dart';
 import 'package:boca_app/pages/funcionamento/funcionamento.dart';
 import 'package:boca_app/pages/Email/email.dart';
+import 'package:boca_app/pages/Status/Status.dart';
+import 'package:boca_app/pages/descricao/Descricao.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -99,11 +100,34 @@ class _HomePageState extends State<HomePage> {
           ),
         );
 
-      case 2: //Dados
+      case 2: //adm
         return Container(
-          padding: EdgeInsets.zero,
+          alignment: Alignment.center,
+          padding: EdgeInsets.only(top: 200.0, bottom: 250.0),
           decoration: BoxDecoration(
             image: _GetBackGround(),
+          ),
+          child: Card(
+            elevation: 4.0,
+            margin: const EdgeInsets.fromLTRB(32.0, 58.0, 32.0, 32.0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                ListHome(
+                    texto: "Objeto",
+                    ico: Icons.image,
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Descricao()))),
+                _buildDivider(),
+                ListHome(
+                    texto: "Alterar Perfil",
+                    ico: Icons.contact_mail,
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Status()))),
+
+              ],
+            ),
           ),
         );
     }

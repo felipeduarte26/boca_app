@@ -52,4 +52,5 @@ class UserBloc extends ChangeNotifier{
     }
 
   }
+
 }

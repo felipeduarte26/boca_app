@@ -34,11 +34,11 @@ class Funcionamento extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
 
               children: <Widget>[
-                ListHome(texto: "Manuais", ico: Icons.book, onTap: ()=> _OpenDialog(context, "Manuais", "BLA BLA BLA BLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLA")),
+                ListHome(texto: "Manuais", ico: Icons.book, onTap: ()=> _OpenDialog(context, "Manuais", "Em Manutenção")),
                 _buildDivider(),
-                ListHome(texto: "Tutoriais", ico: Icons.check_circle, onTap: ()=> _OpenDialog(context, "Tutoriais", "BLA BLA BLA BLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLA")),
+                ListHome(texto: "Tutoriais", ico: Icons.check_circle, onTap: ()=> _OpenDialog(context, "Tutoriais", "Em Manutenção")),
                 _buildDivider(),
-                ListHome(texto: "FAQ's", ico: Icons.search, onTap: ()=> _OpenDialog(context, "FAQ's", "BLA BLA BLA BLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLA")),
+                ListHome(texto: "FAQ's", ico: Icons.search, onTap: ()=> _OpenDialog(context, "FAQ's", "Em Manutenção")),
               ],
             ),
           ),

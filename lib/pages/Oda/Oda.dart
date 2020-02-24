@@ -66,6 +66,7 @@ class _OdaState extends State<Oda> {
 
                   SizedBox(height: 20.0,),
 
+
                   buttonAudio(texto: 'Nível Básico', ClickButton: () async{
                       widget._audioPlayer.pause();
                       int result = await widget._audioPlayer.play(Settings.urlOda+widget.oda.audio1, isLocal:  false);
@@ -75,6 +76,7 @@ class _OdaState extends State<Oda> {
                       }
                     },
                   ),
+
 
                   SizedBox(height: 5.0,),
 

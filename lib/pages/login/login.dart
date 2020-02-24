@@ -39,25 +39,6 @@ class _loginState extends State<login> {
         ),
       );
 
-      /*child: ListView(
-        padding: EdgeInsets.only(bottom: 0.0, left: 12.0, right: 12.0, top: 0.0),
-        children: <Widget>[
-          TopoLogin(),
-        ],
-      ),*/
-
-
-    /*return Scaffold(
-      backgroundColor: Colors.blue,
-      body: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          TopoLogin(),
-          FormLogin(),
-        ],
-      ),
-    );*/
-
   }
 
   @override

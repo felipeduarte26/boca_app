@@ -34,11 +34,11 @@ class InfoLegais extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
 
             children: <Widget>[
-              ListHome(texto: "Autoria e Equipe", ico: Icons.record_voice_over, onTap: ()=> _OpenDialog(context, "Autoria e Equipe", "BLA BLA BLA BLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLA")),
+              ListHome(texto: "Autoria e Equipe", ico: Icons.record_voice_over, onTap: ()=> _OpenDialog(context, "Autoria e Equipe", "Em Manutenção")),
               _buildDivider(),
-              ListHome(texto: "Direitos Legais", ico: Icons.gavel, onTap: ()=> _OpenDialog(context, "Direitos Legais", "BLA BLA BLA BLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLA")),
+              ListHome(texto: "Direitos Legais", ico: Icons.gavel, onTap: ()=> _OpenDialog(context, "Direitos Legais", "Em Manutenção")),
               _buildDivider(),
-              ListHome(texto: "Sobre o Produto", ico: Icons.new_releases, onTap: ()=> _OpenDialog(context, "Sobre o Produto", "BLA BLA BLA BLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLABLA BLA BLA")),
+              ListHome(texto: "Sobre o Produto", ico: Icons.new_releases, onTap: ()=> _OpenDialog(context, "Sobre o Produto", "Em Manutenção")),
             ],
           ),
         ),

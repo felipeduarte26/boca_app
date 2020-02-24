@@ -14,4 +14,11 @@ class AccountRepository{
 
   }
 
+  Future<int> Create(Map dados) async{
+    var url = "${Settings.apiURL}usuario/";
+
+    Response response = await Dio().post(url, data: dados);
+    return response.statusCode;
+  }
+
 }

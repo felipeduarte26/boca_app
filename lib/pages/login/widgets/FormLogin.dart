@@ -172,24 +172,6 @@ Future<bool> authenticate(BuildContext context) async{
       ),
     );
 
-    /*if(Settings.user != null){
-      showDialog(context: context,
-          builder: (BuildContext context){
-            return  BeautifulAlertDialog(titulo: "Aviso", msg: "Usuário Logado com Sucesso");
-
-
-      });
-
-    }else{
-      showDialog(context: context,
-          builder: (BuildContext context){
-            return  BeautifulAlertDialog(titulo: "Aviso", msg: "Usuário ou Senha Incorreta");
-          });
-
-      login = null;
-      senha = null;
-    }*/
-
     return (user != null);
 
   }
