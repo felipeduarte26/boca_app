@@ -82,7 +82,7 @@ class _FormLoginState extends State<FormLogin>
                     tipo: TextInputType.text,
 
                   ),
-                  const SizedBox(height: 20.0,),
+                  const SizedBox(height: 15.0,),
                   InputField(
                     textController: controllerSenha,
                     hint: 'Senha',
@@ -99,7 +99,7 @@ class _FormLoginState extends State<FormLogin>
 
                     },
                   ),
-                  const SizedBox(height: 30.0,),
+                  const SizedBox(height: 20.0,),
 
                   StaggerAnimation(
                     controller: _animationController.view,
@@ -127,7 +127,7 @@ class _FormLoginState extends State<FormLogin>
                     },
                   ),
 
-                  const SizedBox(height: 30.0,),
+                  const SizedBox(height: 15.0,),
                   InkWell(
                     onTap: (){
                       Settings.user = null;

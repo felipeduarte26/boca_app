@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90a04eda-fd2c-44a6-a447-a87589e1dea8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/Info/informacoesLegais.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/Info/informacoesLegais.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/Status/Status.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/Status/Status.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/funcionamento/funcionamento.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/funcionamento/funcionamento.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/login/widgets/topo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/widgets/topo.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +15,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="fa20688" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="f576d680" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -182,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582528365179</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Correção Cards">
+      <created>1582831790361</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1582831790361</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -238,7 +237,8 @@
     <MESSAGE value="dnviando email" />
     <MESSAGE value="Layout Login" />
     <MESSAGE value="Projeto Final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Projeto Final" />
+    <MESSAGE value="Correção Cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correção Cards" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

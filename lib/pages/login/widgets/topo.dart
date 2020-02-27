@@ -13,7 +13,7 @@ class TopoLogin extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: Padding(
-              padding: EdgeInsets.only(top: 50.0),
+              padding: EdgeInsets.only(top: 10.0),
               child: Image.asset(
                 "images/logo.png",
                 width: 350,
@@ -23,7 +23,7 @@ class TopoLogin extends StatelessWidget {
             ),
           ),
 
-          Padding(padding: EdgeInsets.only(top: 15.0)),
+          Padding(padding: EdgeInsets.only(top: 5.0)),
           AlignText(texto: 'Boca - APP', alinhamento: Alignment.bottomCenter, cor: Colors.black87, tamanoFonte: 16.7, fonte: FontWeight.bold, textoAlinhamento:  TextAlign.center),
           Padding(padding: EdgeInsets.only(top: 6.0)),
           AlignText(texto: 'Objetos em Audiodescrição para Pessoas com Deficiência Visual', alinhamento: Alignment.bottomCenter, cor: Colors.black87, tamanoFonte: 15.0, fonte: FontWeight.bold, textoAlinhamento: TextAlign.center),
