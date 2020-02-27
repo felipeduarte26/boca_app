@@ -14,12 +14,16 @@ import 'package:speech_to_text/speech_recognition_error.dart';
 class Descricao extends StatefulWidget {
   @override
   _DescricaoState createState() => _DescricaoState();
+
+  final String img;
+  final String nome;
+
+  Descricao({this.img, this.nome});
 }
 
 class _DescricaoState extends State<Descricao> {
   bool _hasSpeech = false;
-  String _value;
-  String _url= '';
+
   TextEditingController _controllerTexto = new TextEditingController();
   final  email e_mail = email();
   final GlobalKey<State> _keyLoader = new GlobalKey<State>();
@@ -45,19 +49,18 @@ class _DescricaoState extends State<Descricao> {
     final OdaBlock bloc = Provider.of<OdaBlock>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Objeto"),
+        title: Text(widget.nome),
         centerTitle: true,
       ),
 
       body: Container(
         padding: EdgeInsets.all(20.0),
-
         child:ListView(
 
           children: <Widget>[
 
             SizedBox(height: 5.0,),
-            Center(
+            /*Center(
 
 
               child: DropdownButton<String>(
@@ -79,13 +82,13 @@ class _DescricaoState extends State<Descricao> {
                 hint: Text('Selecione um Objeto', textAlign: TextAlign.center, style: TextStyle(fontSize: 16.0), ),
                 value: _value,
               ),
-            ),
+            ),*/
 
             Container(
               color: Colors.grey.shade300,
               height: 250.0,
               width: double.infinity,
-              child: Image.network(_url, fit: BoxFit.fill,),
+              child: Image.network(Settings.urlOda+widget.img, fit: BoxFit.fill,),
             ),
             const SizedBox(height: 13.0),
             Text("Escreva sobre o Objeto", textAlign: TextAlign.center,),
@@ -118,15 +121,14 @@ class _DescricaoState extends State<Descricao> {
                 onPressed:() async{
 
                   if(Settings.user != null){
-                    if(_controllerTexto.text.trim().isEmpty == false){
 
-                      if(_value != null && _value.trim().isEmpty == false){
+                    if(_controllerTexto.text.trim().isEmpty == false){
                         Dialogs.showLoadingDialog(context, _keyLoader);//invoking login
                         try{
 
                           e_mail.Nome = Settings.user.nome;
                           e_mail.Email = Settings.user.email;
-                          e_mail.Texto = _controllerTexto.text.trim();
+                          e_mail.Texto = widget.nome+': '+_controllerTexto.text.trim();
 
                           if(await e_mail.enviar()){
                             _controllerTexto.text = "";
@@ -152,17 +154,6 @@ class _DescricaoState extends State<Descricao> {
                         }catch(e){
                           Navigator.of(_keyLoader.currentContext,rootNavigator: true).pop();
                         }
-                      }else{
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return BeautifulAlertDialog(
-                                  titulo: "Aviso",
-                                  msg: "Selecione um Objeto");
-                            });
-                      }
-
-
                     }
                   }else{
                     showDialog(
@@ -194,7 +185,7 @@ class _DescricaoState extends State<Descricao> {
 
   void resultListener(SpeechRecognitionResult result) {
     setState(() {
-      _value = result.recognizedWords;
+      _controllerTexto.text = result.recognizedWords;
     });
 
   }

@@ -4,6 +4,7 @@ import 'package:boca_app/blocs/Oda.block.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_recognition_error.dart';
+import 'package:boca_app/pages/descricao/Descricao.dart';
 
 class OdaTexto extends StatefulWidget {
   @override
@@ -89,7 +90,6 @@ class _OdaTextoState extends State<OdaTexto> {
               child: ListView.builder(
                   itemCount: bloc.Oda.length,
                   itemBuilder: (BuildContext context, int index){
-
                     if(Textfiltro.text == null || Textfiltro.text.trim().isEmpty|| bloc.Oda[index].nome.trim().toUpperCase().contains(Filtro.trim().toUpperCase())){
                       return Card(
                         color: Colors.green.shade800,
@@ -104,7 +104,7 @@ class _OdaTextoState extends State<OdaTexto> {
                                   Icons.keyboard_arrow_right,
                                   color: Colors.white,
                                 ),
-                                onTap: (){},
+                                onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Descricao(img: bloc.Oda[index].imagem, nome: bloc.Oda[index].nome,))),
 
 
                               )

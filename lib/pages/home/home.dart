@@ -130,8 +130,8 @@ class _HomePageState extends State<HomePage> {
                     ListHome(
                         texto: "Objeto",
                         ico: Icons.image,
-                        //onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => OdaTexto()))),
-                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Descricao()))),
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => OdaTexto()))),
+                        //onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Descricao()))),
                     _buildDivider(),
                     ListHome(
                         texto: "Alterar Perfil",

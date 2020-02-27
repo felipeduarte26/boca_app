@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="90a04eda-fd2c-44a6-a447-a87589e1dea8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login/widgets/topo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/widgets/topo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/Oda/OdaTexto.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/Oda/OdaTexto.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/descricao/Descricao.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/descricao/Descricao.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/login/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/login.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +17,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="f576d680" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="fa20688" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -181,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582831790361</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Correção Cards">
+      <created>1582832787570</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1582832787570</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView">
@@ -239,17 +248,6 @@
     <MESSAGE value="Projeto Final" />
     <MESSAGE value="Correção Cards" />
     <option name="LAST_COMMIT_MESSAGE" value="Correção Cards" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/pages/busca/busca.dart</url>
-          <line>59</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>
