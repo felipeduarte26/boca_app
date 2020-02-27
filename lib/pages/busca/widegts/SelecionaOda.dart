@@ -51,6 +51,7 @@ class SelecionaOda extends StatelessWidget {
   }
 
   Widget FiltroLista(BuildContext context, int index) {
+
     if (filtrar == null || filtrar.trim().isEmpty) {
       return ListTile(
           title: Text(
@@ -72,6 +73,7 @@ class SelecionaOda extends StatelessWidget {
           });
     } else {
       if (oda[index].nome.contains(filtrar)) {
+
         return ListTile(
             title: Text(
               oda[index].nome,
@@ -87,9 +89,10 @@ class SelecionaOda extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => Oda(
-                            oda: oda[index],
-                          )));
+                        oda: oda[index],
+                      )));
             });
+
       } else {
         return SizedBox(
           height: 0.0,

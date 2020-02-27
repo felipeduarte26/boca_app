@@ -2,6 +2,9 @@ import 'package:boca_app/blocs/Oda.block.dart';
 import 'package:flutter/material.dart';
 import 'package:boca_app/pages/busca/widegts/SelecionaOda.dart';
 import 'package:provider/provider.dart';
+import 'package:speech_to_text/speech_to_text.dart';
+import 'package:speech_to_text/speech_recognition_result.dart';
+import 'package:speech_to_text/speech_recognition_error.dart';
 
 class BuscaItens extends StatefulWidget {
 
@@ -13,13 +16,29 @@ class BuscaItens extends StatefulWidget {
 
 class _BuscaItens extends State<BuscaItens> {
 
+  bool _hasSpeech = false;
   final TextEditingController Filtro = new TextEditingController();
   final TextStyle dropdownMenuItem = TextStyle(color: Colors.black, fontSize: 18);
+  final SpeechToText speech = SpeechToText();
+  final GlobalKey<State> _keyLoader = new GlobalKey<State>();
+  String lastWords = "";
+  String lastError = "";
+  String lastStatus = "";
   String FilterText = "";
+
+  Future<void> initSpeechState() async {
+    bool hasSpeech = await speech.initialize(onError: errorListener, onStatus: statusListener );
+
+    if (!mounted) return;
+    setState(() {
+      _hasSpeech = hasSpeech;
+    });
+  }
 
   @override
   void initState(){
-    Filtro.text = null;
+    super.initState();
+    initSpeechState();
   }
 
   @override
@@ -42,10 +61,7 @@ class _BuscaItens extends State<BuscaItens> {
                 padding: EdgeInsets.only(top: 130),
                 height: MediaQuery.of(context).size.height,
                 width: double.infinity,
-                child: SelecionaOda(
-
-                  oda: bloc.Oda, filtrar: FilterText,
-                ),
+                child: SelecionaOda(oda: bloc.Oda, filtrar: Filtro.text.trim().toUpperCase(),),
               ),
               Container(
                 height: 50,
@@ -71,11 +87,13 @@ class _BuscaItens extends State<BuscaItens> {
               Container(
                 child: Column(
                   children: <Widget>[
+
                     SizedBox(
                       height: 70,
                     ),
+
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 20.0),
                       child: Material(
                         elevation: 5.0,
                         borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -86,13 +104,15 @@ class _BuscaItens extends State<BuscaItens> {
                           style: dropdownMenuItem,
                           decoration: InputDecoration(
                               hintText: "Procurar ODA",
-                              hintStyle: TextStyle(
-                                  color: Colors.black38, fontSize: 16),
+                              hintStyle: TextStyle(color: Colors.black38, fontSize: 16),
                               prefixIcon: Material(
                                 elevation: 0.0,
                                 borderRadius:
                                 BorderRadius.all(Radius.circular(30)),
-                                child: Icon(Icons.search),
+                                child: InkWell(
+                                  onTap: startListening,
+                                  child: Icon(Icons.keyboard_voice),
+                                ),
                               ),
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.symmetric(
@@ -103,6 +123,7 @@ class _BuscaItens extends State<BuscaItens> {
                   ],
                 ),
               ),
+
             ],
           ),
         ),
@@ -113,11 +134,39 @@ class _BuscaItens extends State<BuscaItens> {
   void FiltraTexto(String texto){
 
     setState(() {
-      if(texto!= null || texto.trim().isEmpty){
+      if(texto!= null || texto.trim().isEmpty == false){
         FilterText =  Filtro.text.trim().toUpperCase();
       }else FilterText = null;
     });
 
 
+  }
+
+  void startListening() {
+    lastWords = "";
+    lastError = "";
+    speech.listen(onResult: resultListener);
+
+  }
+
+  void resultListener(SpeechRecognitionResult result) {
+    lastWords = result.recognizedWords;
+
+    setState(() {
+      FilterText = lastWords;
+      Filtro.text = FilterText;
+    });
+
+  }
+
+  void errorListener(SpeechRecognitionError error ) {
+    setState(() {
+      lastError = "${error.errorMsg} - ${error.permanent}";
+    });
+  }
+  void statusListener(String status ) {
+    setState(() {
+      lastStatus = "$status";
+    });
   }
 }

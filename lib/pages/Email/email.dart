@@ -102,7 +102,7 @@ class email extends StatelessWidget {
 
                         if (_formKey.currentState.validate()) {
 
-                          Dialogs.showLoadingDialog(context, _keyLoader);//invoking login
+                          Dialogs.showLoadingDialog(context, _keyLoader);
 
                           e_mail.Nome = _controllerNome.text;
                           e_mail.Email = _controllerEmail.text;

@@ -7,18 +7,38 @@ import 'package:boca_app/pages/usuario/widgets/Dialogs.dart';
 import 'package:boca_app/models/EmailModel.dart';
 import 'package:boca_app/pages/login/widgets/LoginDialog.dart';
 
+import 'package:speech_to_text/speech_to_text.dart';
+import 'package:speech_to_text/speech_recognition_result.dart';
+import 'package:speech_to_text/speech_recognition_error.dart';
+
 class Descricao extends StatefulWidget {
   @override
   _DescricaoState createState() => _DescricaoState();
 }
 
 class _DescricaoState extends State<Descricao> {
-
+  bool _hasSpeech = false;
   String _value;
   String _url= '';
   TextEditingController _controllerTexto = new TextEditingController();
   final  email e_mail = email();
   final GlobalKey<State> _keyLoader = new GlobalKey<State>();
+  final SpeechToText speech = SpeechToText();
+
+  Future<void> initSpeechState() async {
+    bool hasSpeech = await speech.initialize(onError: errorListener, onStatus: statusListener );
+
+    if (!mounted) return;
+    setState(() {
+      _hasSpeech = hasSpeech;
+    });
+  }
+
+  @override
+  void initState(){
+    super.initState();
+    initSpeechState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,22 +49,25 @@ class _DescricaoState extends State<Descricao> {
         centerTitle: true,
       ),
 
-      body: ListView(
+      body: Container(
+        padding: EdgeInsets.all(20.0),
 
-        children: <Widget>[
+        child:ListView(
 
-          Center(
+          children: <Widget>[
+
+            SizedBox(height: 5.0,),
+            Center(
 
 
               child: DropdownButton<String>(
 
                 items: bloc.Oda.map((OdaModel dropDownStringItem){
                   return DropdownMenuItem<String>(
-                     value : dropDownStringItem.imagem,
-                     child : Text(dropDownStringItem.nome),
-                   );
-                 }).toList(),
-                 
+                    value : dropDownStringItem.imagem,
+                    child : Text(dropDownStringItem.nome),
+                  );
+                }).toList(),
 
                 onChanged: (Valor){
                   setState(() {
@@ -58,39 +81,39 @@ class _DescricaoState extends State<Descricao> {
               ),
             ),
 
-          Container(
-            color: Colors.grey.shade300,
-            height: 250.0,
-            width: double.infinity,
-            child: Image.network(_url, fit: BoxFit.fill,),
-          ),
-          const SizedBox(height: 13.0),
-          Text("Escreva sobre o Objeto", textAlign: TextAlign.center,),
-
-          Container(
-            color: Colors.white,
-            child: TextField(
-              controller: _controllerTexto,
-              textInputAction: TextInputAction.done,
-              textAlign: TextAlign.start,
-              minLines: 5,
-              maxLength: 300,
-              decoration: new InputDecoration(
-                contentPadding: EdgeInsets.all(30.0),
-                border: new OutlineInputBorder(
-                    borderSide: new BorderSide(color: Colors.teal)),
-              ),
-              autocorrect: true,
-              style: TextStyle(height: 2.0),
-              keyboardType: TextInputType.multiline,
-              maxLines: null,
+            Container(
+              color: Colors.grey.shade300,
+              height: 250.0,
+              width: double.infinity,
+              child: Image.network(_url, fit: BoxFit.fill,),
             ),
-          ),
+            const SizedBox(height: 13.0),
+            Text("Escreva sobre o Objeto", textAlign: TextAlign.center,),
 
-          const SizedBox(height: 30.0),
-              SizedBox(
-                width: double.infinity,
-                child: RaisedButton(
+            Container(
+              color: Colors.white,
+              child: TextField(
+                controller: _controllerTexto,
+                textInputAction: TextInputAction.done,
+                textAlign: TextAlign.start,
+                minLines: 5,
+                maxLength: 300,
+                decoration: new InputDecoration(
+                  contentPadding: EdgeInsets.all(30.0),
+                  border: new OutlineInputBorder(
+                      borderSide: new BorderSide(color: Colors.teal)),
+                ),
+                autocorrect: true,
+                style: TextStyle(height: 2.0),
+                keyboardType: TextInputType.multiline,
+                maxLines: null,
+              ),
+            ),
+
+            const SizedBox(height: 30.0),
+            SizedBox(
+              width: double.infinity,
+              child: RaisedButton(
                 color: Colors.green,
                 onPressed:() async{
 
@@ -154,12 +177,36 @@ class _DescricaoState extends State<Descricao> {
                 },
 
                 child: Text( 'Enviar', style: TextStyle(color: Colors.white), ),
-                ),
               ),
+            ),
 
           ],
-      ),
+        ),
+      )
 
     );
+  }
+
+  void startListening() {
+    speech.listen(onResult: resultListener);
+
+  }
+
+  void resultListener(SpeechRecognitionResult result) {
+    setState(() {
+      _value = result.recognizedWords;
+    });
+
+  }
+
+  void errorListener(SpeechRecognitionError error ) {
+    setState(() {
+     // lastError = "${error.errorMsg} - ${error.permanent}";
+    });
+  }
+  void statusListener(String status ) {
+    setState(() {
+    //  lastStatus = "$status";
+    });
   }
 }
