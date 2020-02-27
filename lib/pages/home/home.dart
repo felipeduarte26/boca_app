@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:boca_app/pages/home/widegts/AnimatedBottomNav.dart';
@@ -67,70 +68,81 @@ class _HomePageState extends State<HomePage> {
         return login();*/
 
       case 1: //Informacoes
-        return Container(
-          alignment: Alignment.center,
-          padding: EdgeInsets.only(top: 200.0, bottom: 250.0),
-          decoration: BoxDecoration(
-            image: _GetBackGround(),
-          ),
-          child: Card(
-            elevation: 4.0,
-            margin: const EdgeInsets.fromLTRB(32.0, 8.0, 32.0, 16.0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
+        return  Container(
+            padding: EdgeInsets.all(32.0),
+            decoration: BoxDecoration(
+              image: _GetBackGround(),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ListHome(
-                    texto: "Informações Legais",
-                    ico: Icons.announcement,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => InfoLegais()))),
-                _buildDivider(),
-                ListHome(
-                    texto: "Informações de Funcionamento",
-                    ico: Icons.info,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Funcionamento()))),
-                _buildDivider(),
-                ListHome(
-                    texto: "Fale Conosco",
-                    ico: Icons.phone,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => email()))),
-              ],
+            child: Center(
+              child:  SizedBox(
+                height: 210.0,
+                child: Card(
+                  elevation: 5.0,
+                  //margin: EdgeInsets.all(10.0),
+                  //margin: EdgeInsets.only(bottom: 200.0, top: 200.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      ListHome(
+                          texto: "Informações Legais",
+                          ico: Icons.announcement,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => InfoLegais()))),
+                      _buildDivider(),
+                      ListHome(
+                          texto: "Informações de Funcionamento",
+                          ico: Icons.info,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Funcionamento()))),
+                      _buildDivider(),
+                      ListHome(
+                          texto: "Fale Conosco",
+                          ico: Icons.phone,
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => email()))),
+                    ],
+                  ),
+                ),
+              )
+
             ),
-          ),
         );
 
       case 2: //adm
         return Container(
           alignment: Alignment.center,
-          padding: EdgeInsets.only(top: 200.0, bottom: 250.0),
+          padding: EdgeInsets.all(32.0),
           decoration: BoxDecoration(
             image: _GetBackGround(),
           ),
-          child: Card(
-            elevation: 4.0,
-            margin: const EdgeInsets.fromLTRB(32.0, 58.0, 32.0, 32.0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ListHome(
-                    texto: "Objeto",
-                    ico: Icons.image,
-                    //onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => OdaTexto()))),
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Descricao()))),
-                _buildDivider(),
-                ListHome(
-                    texto: "Alterar Perfil",
-                    ico: Icons.contact_mail,
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Status()))),
+          child: Center(
+            child: SizedBox(
+              height: 150.0,
+              child: Card(
+                elevation: 4.0,
+                //margin: const EdgeInsets.fromLTRB(32.0, 58.0, 32.0, 32.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    ListHome(
+                        texto: "Objeto",
+                        ico: Icons.image,
+                        //onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => OdaTexto()))),
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Descricao()))),
+                    _buildDivider(),
+                    ListHome(
+                        texto: "Alterar Perfil",
+                        ico: Icons.contact_mail,
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Status()))),
 
-              ],
+                  ],
+                ),
+              ),
             ),
-          ),
+          )
         );
     }
   }

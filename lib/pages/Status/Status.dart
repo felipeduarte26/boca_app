@@ -24,36 +24,41 @@ class _StatusState extends State<Status> {
         ),
         backgroundColor: Colors.transparent,
         body:Container(
-          alignment: Alignment.center,
-          padding: EdgeInsets.only(top: 90.0, bottom: 220.0),
+            alignment: Alignment.center,
+          //padding: EdgeInsets.only(top: 90.0, bottom: 220.0),
           decoration: BoxDecoration(
             image: DecorationImage(image: AssetImage('images/fundo.jpg'), fit: BoxFit.none,),
           ),
 
-          child: Card(
-            elevation: 4.0,
-            margin: const EdgeInsets.fromLTRB(32.0, 20.0, 32.0, 20.0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-            child: Column(
+          child: Center(
+            child: SizedBox(
+              height: 400.0,
+              child: Card(
+                elevation: 4.0,
+                margin: const EdgeInsets.fromLTRB(32.0, 20.0, 32.0, 20.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                child: Column(
 
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ListHome(texto: "Administrador", ico: Icons.email, onTap: ()=> _ValidarOpacao(1) ),
-                _buildDivider(),
-                ListHome(texto: "Avaliador", ico: Icons.email, onTap: ()=> _ValidarOpacao(2)),
-                _buildDivider(),
-                ListHome(texto: "Cadastrador", ico: Icons.email, onTap: ()=> _ValidarOpacao(3)),
-                _buildDivider(),
-                ListHome(texto: "Capacitador", ico: Icons.email, onTap: ()=> _ValidarOpacao(4)),
-                _buildDivider(),
-                ListHome(texto: "Padrão", ico: Icons.email, onTap: ()=> _ValidarOpacao(5)),
-                _buildDivider(),
-                ListHome(texto: "Revisor", ico: Icons.email, onTap: ()=> _ValidarOpacao(6)),
-              ],
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    ListHome(texto: "Administrador", ico: Icons.email, onTap: ()=> _ValidarOpacao(1) ),
+                    _buildDivider(),
+                    ListHome(texto: "Avaliador", ico: Icons.email, onTap: ()=> _ValidarOpacao(2)),
+                    _buildDivider(),
+                    ListHome(texto: "Cadastrador", ico: Icons.email, onTap: ()=> _ValidarOpacao(3)),
+                    _buildDivider(),
+                    ListHome(texto: "Capacitador", ico: Icons.email, onTap: ()=> _ValidarOpacao(4)),
+                    _buildDivider(),
+                    ListHome(texto: "Padrão", ico: Icons.email, onTap: ()=> _ValidarOpacao(5)),
+                    _buildDivider(),
+                    ListHome(texto: "Revisor", ico: Icons.email, onTap: ()=> _ValidarOpacao(6)),
+                  ],
+                ),
+              ),
             ),
-          ),
+          )
         )
     );
   }
