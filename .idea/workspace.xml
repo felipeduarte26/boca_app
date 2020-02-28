@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90a04eda-fd2c-44a6-a447-a87589e1dea8" name="Default Changelist" comment="" />
+    <list default="true" id="90a04eda-fd2c-44a6-a447-a87589e1dea8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/Oda/Oda.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/Oda/Oda.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/login/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582834952336</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Finalizado">
+      <created>1582835291750</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1582835291750</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">

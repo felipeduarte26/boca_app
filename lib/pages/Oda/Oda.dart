@@ -18,10 +18,15 @@ class Oda extends StatefulWidget {
 }
 
 class _OdaState extends State<Oda> {
-
+  String texto = null;
   @override
   void initState() {
     widget._audioPlayer.pause();
+    
+    if(texto == null){
+      texto = widget.oda.texto1;
+    }
+    
     // TODO: implement initState
     super.initState();
   }
@@ -62,7 +67,7 @@ class _OdaState extends State<Oda> {
 
                   SizedBox(height: 20.0,),
 
-                  Text(widget.oda.texto1 , textAlign: TextAlign.justify,),
+                  Text(texto , textAlign: TextAlign.justify,),
 
                   SizedBox(height: 20.0,),
 
@@ -73,6 +78,10 @@ class _OdaState extends State<Oda> {
 
                       if(result != 1){
                         AvisoAlert(context, "Não foi possível carregar o Áudio");
+                      }else{
+                        setState(() {
+                          texto = widget.oda.texto1;
+                        });
                       }
                     },
                   ),
@@ -88,6 +97,10 @@ class _OdaState extends State<Oda> {
 
                         if(result != 1){
                           AvisoAlert(context, "Não foi possível carregar o Áudio");
+                        }else{
+                          setState(() {
+                            texto = widget.oda.texto2;
+                          });
                         }
 
                       }else{
@@ -100,12 +113,18 @@ class _OdaState extends State<Oda> {
 
                   buttonAudio(texto: 'Nível Avançado', ClickButton: () async{
                     widget._audioPlayer.pause();
+
                     if(Settings.user != null){
 
                         int result = await widget._audioPlayer.play(Settings.urlOda+widget.oda.audio3, isLocal:  false);
 
                         if(result != 1){
                           AvisoAlert(context, "Não foi possível carregar o Áudio");
+                        }else{
+
+                          setState(() {
+                            texto = widget.oda.texto3;
+                          });
                         }
 
                       }else{

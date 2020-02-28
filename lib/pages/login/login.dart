@@ -14,8 +14,14 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
-  @override
 
+  @override
+  void initState() {
+    Settings.user = null;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     _portraitModeOnly();
     return Scaffold(
@@ -40,12 +46,6 @@ class _loginState extends State<login> {
         ),
       );
 
-  }
-
-  @override
-  void initState() {
-    Settings.user = null;
-    super.initState();
   }
 }
 _alertDialog(BuildContext context, String titulo, String msg){

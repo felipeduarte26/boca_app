@@ -161,7 +161,6 @@ class _FormLoginState extends State<FormLogin>
 
 Future<bool> authenticate(BuildContext context) async{
     Settings.user = null;
-
     final UserBloc bloc =  new UserBloc();
 
 
@@ -171,6 +170,10 @@ Future<bool> authenticate(BuildContext context) async{
         senha: senha
       ),
     );
+
+    if(Settings.user == null && user != null){
+      Settings.user = user;
+    }
 
     return (user != null);
 
