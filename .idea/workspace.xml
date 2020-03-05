@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90a04eda-fd2c-44a6-a447-a87589e1dea8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/pages/Oda/Listar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/Oda/Oda.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/Oda/Oda.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/Oda/OdaTexto.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/Oda/OdaTexto.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/descricao/Descricao.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/descricao/Descricao.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +27,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="actions" />
+        <option value="state" />
+        <option value="screen" />
+        <option value="bloc" />
         <option value="Dart File" />
       </list>
     </option>
@@ -40,7 +51,7 @@
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">

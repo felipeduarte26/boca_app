@@ -8,8 +8,8 @@ import 'package:boca_app/pages/Info/informacoesLegais.dart';
 import 'package:boca_app/pages/funcionamento/funcionamento.dart';
 import 'package:boca_app/pages/Email/email.dart';
 import 'package:boca_app/pages/Status/Status.dart';
-import 'package:boca_app/pages/descricao/Descricao.dart';
 import 'package:boca_app/pages/Oda/OdaTexto.dart';
+import 'package:boca_app/pages/Oda/Listar.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -130,6 +130,7 @@ class _HomePageState extends State<HomePage> {
                     ListHome(
                         texto: "Objeto",
                         ico: Icons.image,
+                        //onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Listar()))),
                         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => OdaTexto()))),
                         //onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Descricao()))),
                     _buildDivider(),

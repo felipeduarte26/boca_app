@@ -60,30 +60,6 @@ class _DescricaoState extends State<Descricao> {
           children: <Widget>[
 
             SizedBox(height: 5.0,),
-            /*Center(
-
-
-              child: DropdownButton<String>(
-
-                items: bloc.Oda.map((OdaModel dropDownStringItem){
-                  return DropdownMenuItem<String>(
-                    value : dropDownStringItem.imagem,
-                    child : Text(dropDownStringItem.nome),
-                  );
-                }).toList(),
-
-                onChanged: (Valor){
-                  setState(() {
-                    _value = Valor;
-                    _url = Settings.urlOda + Valor;
-                  });
-                },
-
-                hint: Text('Selecione um Objeto', textAlign: TextAlign.center, style: TextStyle(fontSize: 16.0), ),
-                value: _value,
-              ),
-            ),*/
-
             Container(
               color: Colors.grey.shade300,
               height: 250.0,
