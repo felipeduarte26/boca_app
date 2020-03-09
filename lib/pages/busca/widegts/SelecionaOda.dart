@@ -52,7 +52,10 @@ class SelecionaOda extends StatelessWidget {
 
   Widget FiltroLista(BuildContext context, int index) {
 
-    if (filtrar == null || filtrar.trim().isEmpty) {
+    ///if(Textfiltro.text == null || Textfiltro.text.trim().isEmpty|| bloc.Oda[index].nome.trim().toUpperCase().contains(Filtro.trim().toUpperCase())){
+
+    ///if(Textfiltro.text == null || Textfiltro.text.trim().isEmpty|| bloc.Oda[index].nome.trim().toUpperCase().contains(Filtro.trim().toUpperCase()))
+    if (filtrar == null || filtrar.trim().isEmpty || oda[index].nome.trim().toUpperCase().contains(filtrar.trim().toUpperCase() )) {
       return ListTile(
           title: Text(
             oda[index].nome,

@@ -16,6 +16,7 @@ class _OdaTextoState extends State<OdaTexto> {
   bool _hasSpeech = false;
   TextEditingController Textfiltro = new TextEditingController();
   String Filtro = "";
+  final TextStyle dropdownMenuItem = TextStyle(color: Colors.black, fontSize: 18);
   final SpeechToText speech = SpeechToText();
 
   Future<void> initSpeechState() async {
@@ -57,25 +58,25 @@ class _OdaTextoState extends State<OdaTexto> {
 
             Container(
               child: Material(
-                elevation: 3.0,
+                elevation: 5.0,
+                borderRadius: BorderRadius.all(Radius.circular(30)),
                 child: TextField(
-                  controller: Textfiltro,
                   onChanged: (texto){
                     setState(() {
                       Filtro = Textfiltro.text.trim();
                     });
 
                   },
+                  controller: Textfiltro,
+                  cursorColor: Theme.of(context).primaryColor,
+                  style: dropdownMenuItem,
                   decoration: InputDecoration(
-                      hintText: "Buscar Objeto",
+                      hintText: "Procurar Objeto",
                       hintStyle: TextStyle(color: Colors.black38, fontSize: 16),
                       prefixIcon: Material(
                         elevation: 0.0,
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(40),
-                            bottomRight: Radius.circular(40)
-                        ),
-
+                        borderRadius:
+                        BorderRadius.all(Radius.circular(30)),
                         child: InkWell(
                           onTap: startListening,
                           child: Icon(Icons.keyboard_voice),
