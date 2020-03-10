@@ -10,6 +10,7 @@ import 'package:boca_app/pages/Email/email.dart';
 import 'package:boca_app/pages/Status/Status.dart';
 import 'package:boca_app/pages/Oda/OdaTexto.dart';
 import 'package:boca_app/pages/Oda/Listar.dart';
+import 'package:boca_app/pages/busca/BuscaOda.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -63,7 +64,8 @@ class _HomePageState extends State<HomePage> {
   getPage(int page) {
     switch (page) {
       case 0: //Buscar
-        return BuscaItens();
+        //return BuscaItens();
+      return BuscaOda();
       /*case 1: //Login
         return login();*/
 

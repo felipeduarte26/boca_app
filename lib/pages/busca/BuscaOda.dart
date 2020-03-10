@@ -1,20 +1,19 @@
-import 'package:boca_app/blocs/Oda.block.dart';
 import 'package:flutter/material.dart';
-import 'package:boca_app/pages/busca/widegts/SelecionaOda.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+import 'package:boca_app/blocs/Oda.block.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_recognition_error.dart';
-
-class BuscaItens extends StatefulWidget {
-
-  BuscaItens({Key key}) : super(key: key);
+import 'package:boca_app/pages/busca/widegts/SelecionaBuscaOda.dart';
 
 
-  _BuscaItens createState() => _BuscaItens();
+class BuscaOda extends StatefulWidget {
+  @override
+  _BuscaOdaState createState() => _BuscaOdaState();
 }
 
-class _BuscaItens extends State<BuscaItens> {
+class _BuscaOdaState extends State<BuscaOda> {
 
   bool _hasSpeech = false;
   final TextEditingController Filtro = new TextEditingController();
@@ -25,6 +24,7 @@ class _BuscaItens extends State<BuscaItens> {
   String lastError = "";
   String lastStatus = "";
   String FilterText = "";
+
 
   Future<void> initSpeechState() async {
     bool hasSpeech = await speech.initialize(onError: errorListener, onStatus: statusListener );
@@ -45,22 +45,15 @@ class _BuscaItens extends State<BuscaItens> {
   Widget build(BuildContext context) {
     final OdaBlock bloc = Provider.of<OdaBlock>(context);
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('images/fundo.jpg'),
-              fit: BoxFit.none,
-            ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/fundo.jpg'),
+            fit: BoxFit.none,
           ),
-          child: Stack(
+        ),
+        child: Column(
             children: <Widget>[
-              Container(
-                padding: EdgeInsets.only(top: 130),
-                height: MediaQuery.of(context).size.height,
-                width: double.infinity,
-                child: SelecionaOda(oda: bloc.Oda, filtrar: Filtro.text.trim().toUpperCase(),),
-              ),
               Container(
                 height: 50,
                 width: double.infinity,
@@ -82,52 +75,46 @@ class _BuscaItens extends State<BuscaItens> {
                   ),
                 ),
               ),
+
               Container(
-                child: Column(
-                  children: <Widget>[
+                padding: EdgeInsets.all(10.0),
+                child: Material(
+                  elevation: 5.0,
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                  child: TextField(
+                    controller: Filtro,
+                    onChanged: FiltraTexto,
+                    cursorColor: Theme.of(context).primaryColor,
 
-                    SizedBox(
-                      height: 70,
-                    ),
-
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Material(
-                        elevation: 5.0,
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        child: TextField(
-                          onChanged: FiltraTexto,
-                          controller: Filtro,
-                          cursorColor: Theme.of(context).primaryColor,
-                          style: dropdownMenuItem,
-                          decoration: InputDecoration(
-                              hintText: "Procurar ODA",
-                              hintStyle: TextStyle(color: Colors.black38, fontSize: 16),
-                              prefixIcon: Material(
-                                elevation: 0.0,
-                                borderRadius:
-                                BorderRadius.all(Radius.circular(30)),
-                                child: InkWell(
-                                  onTap: startListening,
-                                  child: Icon(Icons.keyboard_voice),
-                                ),
-                              ),
-                              border: InputBorder.none,
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 25, vertical: 15)),
+                    decoration: InputDecoration(
+                        hintText: "Procurar Objeto",
+                        hintStyle: TextStyle(color: Colors.black38, fontSize: 16),
+                        prefixIcon: Material(
+                          elevation: 0.0,
+                          borderRadius:
+                          BorderRadius.all(Radius.circular(30)),
+                          child: InkWell(
+                            onTap: startListening,
+                            child: Icon(Icons.keyboard_voice),
+                          ),
                         ),
-                      ),
-                    ),
-                  ],
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 25, vertical: 15)),
+                  ),
                 ),
               ),
 
+              SizedBox(height: 2.0),
+
+              SelecionaBuscaOda(filtrar: FilterText, oda: bloc.Oda,),
+
             ],
-          ),
         ),
       ),
     );
   }
+
 
   void FiltraTexto(String texto){
 

@@ -13,8 +13,6 @@ class Loader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
-
     if(object == null)
       return Center(
         child: GenericProgressIndicator(),
