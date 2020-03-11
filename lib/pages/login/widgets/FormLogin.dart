@@ -7,6 +7,7 @@ import 'package:boca_app/blocs/user.block.dart';
 import 'package:boca_app/pages/login/widgets/LoginDialog.dart';
 import 'package:boca_app/settings.dart';
 import 'package:boca_app/pages/home/home.dart';
+import 'package:boca_app/pages/Senha/RecuperSenha.dart';
 
 class FormLogin extends StatefulWidget {
   @override
@@ -147,6 +148,15 @@ class _FormLoginState extends State<FormLogin>
                       width:  MediaQuery.of(context).size.width / 1.2,
                       height: 60.0,
                       child: Text("Entrar como Visitante", style: TextStyle(color: Colors.white), textAlign: TextAlign.center, ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0,),
+
+                  InkWell(
+                    onTap: ()=> RecuperarSenha(),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      child: const Text('Esqueci minha Senha', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
                     ),
                   ),
 
