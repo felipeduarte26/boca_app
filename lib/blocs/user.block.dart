@@ -59,7 +59,7 @@ class UserBloc extends ChangeNotifier{
 
     var res = await repository.RecuperarSenha(dados);
 
-    return res == 200;
+    return (res == 200);
 
   }
 
