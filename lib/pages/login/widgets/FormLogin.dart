@@ -153,7 +153,7 @@ class _FormLoginState extends State<FormLogin>
                   SizedBox(height: 20.0,),
 
                   InkWell(
-                    onTap: ()=> RecuperarSenha(),
+                    onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context) => RecuperarSenha())),
                     child: Container(
                       width: MediaQuery.of(context).size.width / 1.2,
                       child: const Text('Esqueci minha Senha', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),

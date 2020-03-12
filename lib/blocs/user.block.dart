@@ -5,6 +5,7 @@ import 'package:boca_app/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:boca_app/models/UserModel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:boca_app/repositories/recuperar_acesso.dart';
 
 class UserBloc extends ChangeNotifier{
   var user = new UserModel();
@@ -50,6 +51,15 @@ class UserBloc extends ChangeNotifier{
       user = res;
       notifyListeners();
     }
+
+  }
+
+  Future<bool> Recuperar(Map dados) async{
+    var repository = new RecuperarAcessoRepository();
+
+    var res = await repository.RecuperarSenha(dados);
+
+    return res == 200;
 
   }
 

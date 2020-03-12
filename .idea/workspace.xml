@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90a04eda-fd2c-44a6-a447-a87589e1dea8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/pages/Senha/RecuperSenha.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/repositories/recuperar_acesso.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blocs/user.block.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blocs/user.block.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/Senha/RecuperSenha.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/Senha/RecuperSenha.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -228,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583814624528</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Finalizado">
+      <created>1583900100452</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1583900100453</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
