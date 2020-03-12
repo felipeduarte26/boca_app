@@ -64,8 +64,9 @@ class _HomePageState extends State<HomePage> {
   getPage(int page) {
     switch (page) {
       case 0: //Buscar
-        //return BuscaItens();
-      return BuscaOda();
+        return BuscaItens();
+        return BuscaOda();
+
       /*case 1: //Login
         return login();*/
 

@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90a04eda-fd2c-44a6-a447-a87589e1dea8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/repositories/recuperar_acesso.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blocs/user.block.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blocs/user.block.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/Senha/RecuperSenha.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/Senha/RecuperSenha.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/Oda/Listar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/Oda/Listar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/busca/BuscaOda.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/busca/BuscaOda.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/busca/widegts/SelecionaBuscaOda.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/busca/widegts/SelecionaBuscaOda.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +50,7 @@
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="dart.settings" />
+    <property name="settings.editor.selected.configurable" value="language.cpp" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -222,21 +227,7 @@
       <option name="project" value="LOCAL" />
       <updated>1583751409143</updated>
     </task>
-    <task id="LOCAL-00021" summary="Finalizado">
-      <created>1583814624528</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1583814624528</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Finalizado">
-      <created>1583900100452</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1583900100453</updated>
-    </task>
-    <option name="localTasksCounter" value="23" />
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">

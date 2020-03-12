@@ -6,6 +6,8 @@ import 'package:speech_to_text/speech_to_text.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_recognition_error.dart';
 import 'package:boca_app/pages/busca/widegts/SelecionaBuscaOda.dart';
+import 'package:boca_app/models/OdaModel.dart';
+import 'package:boca_app/pages/Oda/Oda.dart';
 
 
 class BuscaOda extends StatefulWidget {
@@ -75,7 +77,6 @@ class _BuscaOdaState extends State<BuscaOda> {
                   ),
                 ),
               ),
-
               Container(
                 padding: EdgeInsets.all(10.0),
                 child: Material(
@@ -105,7 +106,6 @@ class _BuscaOdaState extends State<BuscaOda> {
                 ),
               ),
 
-              SizedBox(height: 2.0),
 
               SelecionaBuscaOda(filtrar: FilterText, oda: bloc.Oda,),
 
@@ -114,7 +114,6 @@ class _BuscaOdaState extends State<BuscaOda> {
       ),
     );
   }
-
 
   void FiltraTexto(String texto){
 

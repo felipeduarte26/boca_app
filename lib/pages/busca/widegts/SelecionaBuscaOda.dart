@@ -13,36 +13,35 @@ class SelecionaBuscaOda extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Loader(
-        object: oda,
-        callback: list,
-      ),
+    return Loader(
+      object: oda,
+      callback: list,
     );
   }
 
   Widget list(){
+    return Expanded(
+      child: ListView.builder(
+          itemCount: oda.length,
+          itemBuilder: (context, index){
 
-    return ListView.builder(
-        itemCount: oda.length,
-        itemBuilder: (context, index){
+            return Padding(
+              padding: EdgeInsets.all(2.0),
+              child: Card(
+                color: Colors.green.shade800,
+                elevation: 5.0,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
 
-          return Padding(
-            padding: EdgeInsets.all(2),
-            child: Card(
-              color: Colors.green.shade800,
-              elevation: 5.0,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
+                    FiltroLista(context, index),
 
-                  FiltroLista(context, index),
-
-                ],
+                  ],
+                ),
               ),
-            ),
-          );
-        }
+            );
+          }
+      ),
     );
   }
 
