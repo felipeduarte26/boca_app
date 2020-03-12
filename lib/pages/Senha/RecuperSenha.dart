@@ -138,7 +138,7 @@ class _RecuperarSenhaState extends State<RecuperarSenha> {
                                       builder: (BuildContext context) {
                                         return BeautifulAlertDialog(
                                             titulo: "Aviso",
-                                            msg: "Foi enviado um E-mail de Confirmação de Sua Alteração de Senha");
+                                            msg: "Foi enviado um E-mail de Confirmando sua Alteração de Senha");
                                       });
 
                                 }else{
