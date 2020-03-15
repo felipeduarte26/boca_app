@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90a04eda-fd2c-44a6-a447-a87589e1dea8" name="Default Changelist" comment="Finalizado">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/UserModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/UserModel.dart" afterDir="false" />
+    <list default="true" id="90a04eda-fd2c-44a6-a447-a87589e1dea8" name="Default Changelist" comment="Criando usuario">
       <change beforePath="$PROJECT_DIR$/lib/pages/usuario/cadastroUsuario.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/usuario/cadastroUsuario.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/account_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/account_repository.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -238,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584045879909</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Criando usuario">
+      <created>1584250187579</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1584250187579</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView">
@@ -298,7 +298,8 @@
     <MESSAGE value="Finalizado" />
     <MESSAGE value="Lista" />
     <MESSAGE value="Altarado Informacao de Senha" />
-    <option name="LAST_COMMIT_MESSAGE" value="Altarado Informacao de Senha" />
+    <MESSAGE value="Criando usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criando usuario" />
   </component>
   <component name="masterDetails">
     <states>
