@@ -44,13 +44,18 @@ class UserModel extends AccountRepository{
   }
 
   Future<bool> CreateUser() async{
+    final Map<String, dynamic> dados = toJson();
+    dados.remove("_id");
+
     int status = 0;
+
     try{
-      status = await Create(toJson());
+      status = await Create(dados);
     }finally{
       return (status == 200);
     }
 
 
   }
+
 }

@@ -143,29 +143,28 @@ class _CadUsuarioState extends State<CadUsuario> {
       Dialogs.showLoadingDialog(context, _keyLoader);//invoking login
 
       final UserModel user = UserModel(nome: _ControllerNome.text.trim(), login: _ControllerUsuario.text.trim(), senha: _ControllerSenha.text.trim(),
-          email:_ControllerEmail.text.trim(), perfil: "Avaliador", senha2: _ControllerSenha2.text.trim(), sId: null);
+            email:_ControllerEmail.text.trim(), perfil: "Padrão", senha2: _ControllerSenha2.text.trim(), sId: null);
 
-      if(await user.CreateUser()){
-        Navigator.of(_keyLoader.currentContext,rootNavigator: true).pop();
-        showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return BeautifulAlertDialog(
-                  titulo: "Aviso",
-                  msg: "Cadastro realizado com sucesso");
-            });
-      }else{
-        Navigator.of(_keyLoader.currentContext,rootNavigator: true).pop();
-        showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return BeautifulAlertDialog(
-                  titulo: "Aviso",
-                  msg: "Ocorreu um erro ao tentar cadastrar um usuário");
-            });
-      }
+        if(await user.CreateUser()){
+          Navigator.of(_keyLoader.currentContext,rootNavigator: true).pop();
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return BeautifulAlertDialog(
+                    titulo: "Aviso",
+                    msg: "Cadastro realizado com sucesso");
+              });
 
-
+        }else{
+          Navigator.of(_keyLoader.currentContext,rootNavigator: true).pop();
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return BeautifulAlertDialog(
+                    titulo: "Aviso",
+                    msg: "Ocorreu um erro ao tentar cadastrar um usuário");
+              });
+        }
 
 
 
