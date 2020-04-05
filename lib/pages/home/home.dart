@@ -11,6 +11,7 @@ import 'package:boca_app/pages/Status/Status.dart';
 import 'package:boca_app/pages/Oda/OdaTexto.dart';
 import 'package:boca_app/pages/Oda/Listar.dart';
 import 'package:boca_app/pages/busca/BuscaOda.dart';
+import 'package:boca_app/pages/login/login.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -64,13 +65,12 @@ class _HomePageState extends State<HomePage> {
   getPage(int page) {
     switch (page) {
       case 0: //Buscar
-        //return BuscaItens();
-        return BuscaOda();
+       return BuscaOda();
 
-      /*case 1: //Login
-        return login();*/
+      case 1: //Login
+        return login();
 
-      case 1: //Informacoes
+      case 2: //Informacoes
         return  Container(
             padding: EdgeInsets.all(32.0),
             decoration: BoxDecoration(
@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
             ),
         );
 
-      case 2: //adm
+      case 3: //adm
         return Container(
           alignment: Alignment.center,
           padding: EdgeInsets.all(32.0),

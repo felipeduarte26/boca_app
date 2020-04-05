@@ -17,7 +17,7 @@ class _loginState extends State<login> {
 
   @override
   void initState() {
-    Settings.user = null;
+    //Settings.user = null;
     super.initState();
   }
 
