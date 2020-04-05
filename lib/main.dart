@@ -2,7 +2,7 @@ import 'package:provider/provider.dart';
 import 'blocs/Oda.block.dart';
 import 'package:flutter/material.dart';
 import 'blocs/user.block.dart';
-import 'package:boca_app/pages/login/login.dart';
+import 'package:boca_app/pages/splash/SplashScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
             primaryColor: Colors.green.shade800,
             //primarySwatch:  Colors.red,
           ),
-          home: login(),//  HomePage(),
+          home: Splash(),//  HomePage(),
         ),
     );
   }
