@@ -11,7 +11,8 @@ class buttonAudio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
-      width: double.infinity,
+      height: 50.0,
+      width: 300.0,
       child: RaisedButton(
         color: Colors.green,
         onPressed: ClickButton,
