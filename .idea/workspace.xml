@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="90a04eda-fd2c-44a6-a447-a87589e1dea8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/home/widegts/AnimatedBottomNav.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/widegts/AnimatedBottomNav.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/splash/SplashScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/splash/SplashScreen.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -263,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586075043785</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Splash">
+      <created>1586076203720</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1586076203720</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView">
