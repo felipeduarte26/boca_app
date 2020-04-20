@@ -112,8 +112,6 @@ class _FormLoginState extends State<FormLogin>
 
                         _animationController.forward();
 
-                        Settings.user = null;
-
                         if(await authenticate(context)){
                           _animationController.reset();
                           Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomePage()));
@@ -172,9 +170,8 @@ class _FormLoginState extends State<FormLogin>
   }
 
 Future<bool> authenticate(BuildContext context) async{
-    Settings.user = null;
     final UserBloc bloc =  new UserBloc();
-
+    Settings.user = null;
 
     var user = await bloc.authenticate(
       new AuthenticateModel(
@@ -183,7 +180,7 @@ Future<bool> authenticate(BuildContext context) async{
       ),
     );
 
-    if(Settings.user == null && user != null){
+    if(user != null){
       Settings.user = user;
     }
 

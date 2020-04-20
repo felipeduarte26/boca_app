@@ -20,7 +20,7 @@ class UserBloc extends ChangeNotifier{
       try{
         var prefs = await SharedPreferences.getInstance();
         var repository = new AccountRepository();
-
+        user = null;
         var res = await repository.authenticate(model);
         user = res;
 
