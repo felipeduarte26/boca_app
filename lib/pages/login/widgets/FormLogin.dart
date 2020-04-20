@@ -103,28 +103,39 @@ class _FormLoginState extends State<FormLogin>
                   const SizedBox(height: 20.0,),
 
                   StaggerAnimation(
+                    cor:  Settings.user == null? Colors.amber : Colors.blue.shade800,
                     controller: _animationController.view,
                     widthDevice: MediaQuery.of(context).size.width / 1.2,
                     validar: () async{
 
-                      if(_formKey.currentState.validate()){
-                        _formKey.currentState.save();
+                      if(Settings.user == null){
 
-                        _animationController.forward();
+                        if(_formKey.currentState.validate()){
+                          _formKey.currentState.save();
 
-                        if(await authenticate(context)){
-                          _animationController.reset();
-                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomePage()));
-                        }else{
-                          showDialog(context: context,
-                              builder: (BuildContext context){
-                                return  BeautifulAlertDialog(titulo: "Aviso", msg: "Usuário ou Senha Incorreta");
-                              });
+                          _animationController.forward();
 
-                          login = null;
-                          senha = null;
+                          if(await authenticate(context)){
+                            _animationController.reset();
+                            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomePage()));
+                          }else{
+                            showDialog(context: context,
+                                builder: (BuildContext context){
+                                  return  BeautifulAlertDialog(titulo: "Aviso", msg: "Usuário ou Senha Incorreta");
+                                });
+
+                            login = null;
+                            senha = null;
+                          }
                         }
+                      }else{
+                        setState(() {
+                          Settings.user = null;
+                        });
+
                       }
+
+
                     },
                   ),
 

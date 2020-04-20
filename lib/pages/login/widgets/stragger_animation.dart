@@ -1,3 +1,4 @@
+import 'package:boca_app/settings.dart';
 import 'package:flutter/material.dart';
 
 class StaggerAnimation extends StatelessWidget {
@@ -5,8 +6,11 @@ class StaggerAnimation extends StatelessWidget {
   final AnimationController controller;
   final double widthDevice;
   final Function validar;
+  final Color cor;
 
-  StaggerAnimation({this.controller, this.widthDevice, this.validar}):
+
+  StaggerAnimation({this.controller, this.widthDevice, this.validar, this.cor}):
+
 
 
         buttonSqueeze = Tween(
@@ -33,8 +37,11 @@ class StaggerAnimation extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: LinearGradient(
                 colors: [
-                  Colors.amber,// Color(0xff4169e1),
-                  Colors.amber  //Color(0xff4682b4)
+                  cor,
+                  cor
+                  //Colors .amber,// Color(0xff4169e1),
+                  //Colors.amber  //Color(0xff4682b4)
+
                 ]
             ) ,
             borderRadius: BorderRadius.all(Radius.circular(50.0)),
@@ -50,7 +57,12 @@ class StaggerAnimation extends StatelessWidget {
 
   Widget _buildInside(BuildContext context){
     if(buttonSqueeze.value > 75){
-      return  Text('Entrar', style: TextStyle(color:  Colors.white, fontWeight: FontWeight.bold) ,);
+      if(Settings.user == null){
+        return  Text('Entrar', style: TextStyle(color:  Colors.white, fontWeight: FontWeight.bold) ,);
+
+      }else{
+        return  Text('LOGOFF', style: TextStyle(color:  Colors.white, fontWeight: FontWeight.bold) ,);
+      }
     } else{
       return CircularProgressIndicator(
         valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
