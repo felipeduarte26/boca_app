@@ -3,14 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:boca_app/pages/home/widegts/AnimatedBottomNav.dart';
-import 'package:boca_app/pages/busca/busca.dart';
 import 'package:boca_app/pages/home/widegts/ListHome.dart';
 import 'package:boca_app/pages/Info/informacoesLegais.dart';
 import 'package:boca_app/pages/funcionamento/funcionamento.dart';
 import 'package:boca_app/pages/Email/email.dart';
 import 'package:boca_app/pages/Status/Status.dart';
 import 'package:boca_app/pages/Oda/OdaTexto.dart';
-import 'package:boca_app/pages/Oda/Listar.dart';
 import 'package:boca_app/pages/busca/BuscaOda.dart';
 import 'package:boca_app/pages/login/login.dart';
 
@@ -39,13 +37,14 @@ class _HomePageState extends State<HomePage> {
             textColor: Colors.white,
             onPressed: () {
               if(Settings.user != null){
+
                 setState(() {
                   Settings.user = null;
                 });
 
               }
             },
-            child: Settings.user != null ? Icon(Icons.exit_to_app) : null,
+            child: Settings.user != null ? Icon(Icons.exit_to_app) : Text('(Desconectado)', style: TextStyle(color: Colors.red.shade100, fontStyle: FontStyle.italic), ),
             shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
           ),
         ],

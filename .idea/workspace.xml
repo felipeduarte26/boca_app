@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90a04eda-fd2c-44a6-a447-a87589e1dea8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/home/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/widgets/FormLogin.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login/widgets/stragger_animation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/widgets/stragger_animation.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -289,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587366612717</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="botão de sair">
+      <created>1589167272240</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1589167272240</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView">
@@ -354,7 +354,8 @@
     <MESSAGE value="Splash" />
     <MESSAGE value="Correção Login" />
     <MESSAGE value="Botao logoff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Botao logoff" />
+    <MESSAGE value="botão de sair" />
+    <option name="LAST_COMMIT_MESSAGE" value="botão de sair" />
   </component>
   <component name="masterDetails">
     <states>
