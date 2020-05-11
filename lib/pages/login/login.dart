@@ -23,7 +23,12 @@ class _loginState extends State<login> {
 
   @override
   Widget build(BuildContext context) {
-    _portraitModeOnly();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
+  //  _portraitModeOnly();
     return Scaffold(
         body: Container(
           height: double.infinity,
@@ -39,10 +44,6 @@ class _loginState extends State<login> {
                     child: const Text('Criar uma nova Conta?', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
                   )
               ),
-
-
-
-
             ],
           ),
         ),
@@ -58,14 +59,3 @@ _alertDialog(BuildContext context, String titulo, String msg){
   );
 }
 
-void _portraitModeOnly() {
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
-}
-
-@override
-void dispose() {
-  _portraitModeOnly();
-}

@@ -57,12 +57,7 @@ class StaggerAnimation extends StatelessWidget {
 
   Widget _buildInside(BuildContext context){
     if(buttonSqueeze.value > 75){
-      if(Settings.user == null){
-        return  Text('Entrar', style: TextStyle(color:  Colors.white, fontWeight: FontWeight.bold) ,);
-
-      }else{
-        return  Text('LOGOFF', style: TextStyle(color:  Colors.white, fontWeight: FontWeight.bold) ,);
-      }
+      return  Text('Entrar', style: TextStyle(color:  Colors.white, fontWeight: FontWeight.bold) ,);
     } else{
       return CircularProgressIndicator(
         valueColor: AlwaysStoppedAnimation<Color>(Colors.white),

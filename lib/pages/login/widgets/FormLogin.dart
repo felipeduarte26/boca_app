@@ -103,7 +103,7 @@ class _FormLoginState extends State<FormLogin>
                   const SizedBox(height: 20.0,),
 
                   StaggerAnimation(
-                    cor:  Settings.user == null? Colors.amber : Colors.blue.shade800,
+                    cor: Colors.amber,
                     controller: _animationController.view,
                     widthDevice: MediaQuery.of(context).size.width / 1.2,
                     validar: () async{

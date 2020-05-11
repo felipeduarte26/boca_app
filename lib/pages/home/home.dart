@@ -1,3 +1,4 @@
+import 'package:boca_app/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,21 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Seja Bem-vindo'),
         centerTitle: true,
+        actions: <Widget>[
+          FlatButton(
+            textColor: Colors.white,
+            onPressed: () {
+              if(Settings.user != null){
+                setState(() {
+                  Settings.user = null;
+                });
+
+              }
+            },
+            child: Settings.user != null ? Icon(Icons.exit_to_app) : null,
+            shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
+          ),
+        ],
       ),
       backgroundColor: Colors.transparent,
       body: getPage(_currentPage),
